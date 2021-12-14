@@ -1,0 +1,94 @@
+:root {
+  /* Colors */
+  --word: #333;
+  --word-light: #ccc;
+  --yellow: #d1a12c;
+  --yellow-light: #fbc951;
+  --yellow-dark: #4D3A0E;
+
+  /* Fonts */
+  --font: 'Play', sans-serif;
+  --font-primary: 'Petrona', serif;
+  --font-secondary: 'Poppins', sans-serif;
+  --font-tertiary: 'Roboto', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  font-size: 16px;
+  line-height: 1.5rem;
+  font-family: var(--font);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--word);
+  transition: 0.2s;
+}
+
+h1,
+h2,
+h3,
+p {
+  color: var(--word);
+  line-height: 2rem;
+}
+
+button, input {
+  outline: 0;
+  border: 0;
+  font-size: 1.2rem;
+  font-family: var(--font-secondary);
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  display: block;
+  border: 3px solid #e2e2e2;
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--input-default);
+  transition: 0.2s;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  opacity: 0.6;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    margin: 0;
+    max-width: 100%;
+  }
+}
+

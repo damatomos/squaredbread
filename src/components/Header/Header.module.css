@@ -1,0 +1,13 @@
+.wrapper {
+  background: white;
+  height: 7.5rem;
+  z-index: 10;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

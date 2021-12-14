@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  font-size: 1.5rem;
+}
+
+a:hover {
+  color: var(--yellow-light);
+}
+
+.active {
+  color: var(--yellow-light);
+}
+
+.inactive {
+  color: var(--word);
+}
