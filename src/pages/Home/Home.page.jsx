@@ -1,4 +1,5 @@
 import React from "react";
+import Banner from "../../components/Banner/Banner.component";
 import styles from './Home.module.css';
 
 function Home() {
@@ -9,7 +10,7 @@ function Home() {
 
   return (
     <div className={`page ${styles.wrapper}`}>
-      Home
+      <Banner/>
     </div>
   );
 }

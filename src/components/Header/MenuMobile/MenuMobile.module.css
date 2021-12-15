@@ -1,7 +1,7 @@
 .wrapper {
   padding: 2rem 1rem;
   position: relative;
-  height: 100px; 
+  height: 120px; 
   display: flex;
   align-items: center;
   flex-direction: column;
