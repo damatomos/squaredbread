@@ -19,6 +19,8 @@
 }
 
 .image {
+  width: 80%;
+  max-width: 768px;
   box-shadow: 0 0 0 4px white, 0 0 0 8px var(--yellow);
 }
 
@@ -28,4 +30,5 @@
   font-family: var(--font-tertiary);
   font-style: italic;
   text-align: center;
+  padding: 0 2rem;
 }

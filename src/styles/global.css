@@ -92,3 +92,17 @@ input[type="checkbox"], input[type="radio"] {
   }
 }
 
+@media screen and (max-width: 768px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  html, body {
+    font-size: 12px;
+  }
+}
+
+
+
