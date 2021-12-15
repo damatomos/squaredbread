@@ -43,37 +43,13 @@ p {
   line-height: 2rem;
 }
 
-button, input {
+button, input, textarea {
   outline: 0;
-  border: 0;
+  border: none;
   font-size: 1.2rem;
   font-family: var(--font-secondary);
   border-radius: 4px;
-  transition: 0.2s;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-textarea {
-  display: block;
-  border: 3px solid #e2e2e2;
-  width: 100%;
-  padding: 0.8rem;
-  background: var(--input-default);
-  transition: 0.2s;
-}
-
-input[type="text"]::placeholder,
-input[type="password"]::placeholder,
-input[type="email"]::placeholder,
-textarea::placeholder {
-  opacity: 0.6;
-}
-
-input[type="checkbox"], input[type="radio"] {
-  width: 1.2rem;
-  height: 1.2rem;
+  transition: 0.3s;
 }
 
 .container {

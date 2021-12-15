@@ -1,0 +1,25 @@
+.wrapper {
+  width: 100%;
+  height: 45px;
+  background: var(--yellow);
+  border-radius: 4px;
+
+  box-shadow: 0 0 0 2px var(--yellow-dark);
+  padding: 1rem;
+  margin-bottom: 2.5rem;
+  filter: none;
+}
+
+.wrapper:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--yellow) inset, 0 0 0 2px var(--yellow-dark);
+}
+
+.wrapper:focus, .wrapper:hover {
+  background: var(--yellow-light);
+  box-shadow: 0 0 0 4px var(--yellow);
+}
+
+.label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
