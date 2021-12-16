@@ -101,7 +101,7 @@
 }
 
 .btnCount {
-  height: 2.5rem;
+  height: 40px;
   min-width: 6rem;
   background: white;
 
@@ -147,7 +147,7 @@
 }
 
 .btnAdd {
-  height: 2.5rem;
+  height: 40px;
   padding: 0 2rem;
   font-size: 1.2rem;
   font-family: var(--font-secondary);
@@ -174,13 +174,17 @@
   .content {
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 0 3px var(--yellow);
   }
+
   .image {
     width: 100%;
     justify-self: center;
     max-width: none;
     max-height: none;
+  }
+
+  .info {
+    width: 100%;
   }
 
   .description {
