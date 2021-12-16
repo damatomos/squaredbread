@@ -6,9 +6,18 @@
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
   transition: 0.4s;
   margin-top: 1rem;
+  font-size: 20px;
 }
 
 .wrapper:hover {
   background: black;
   color: var(--yellow);
+}
+
+@media screen and (max-width: 426px) {
+  .wrapper {
+    width: 100%;
+    max-width: none;
+    font-size: 18px;
+  }
 }
