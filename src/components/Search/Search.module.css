@@ -1,0 +1,51 @@
+.wrapper {
+  background: white;
+  width: 80%;
+  max-width: 620px;
+  height: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 0 0 1px var(--yellow);
+  padding: 0 1.25rem;
+  margin: 1rem 4rem;
+  border-radius: 4px;
+}
+
+.wrapper:hover, .wrapper:focus {
+  box-shadow: 0 0 0 2px var(--yellow);
+}
+
+.wrapper input {
+  height: 100%;
+  width: calc(100% - 32px);
+  background: none;
+}
+
+.wrapper input::placeholder {
+  color: rgba(51, 51, 51, 0.5);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.4rem;
+  cursor: pointer;
+}
+.icon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--yellow);
+}
+
+.icon:hover svg {
+  fill: var(--yellow-light);
+}
+.icon svg > path {
+  width: 100%;
+}

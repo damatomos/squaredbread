@@ -1,5 +1,145 @@
 {
   "about": {
     "about_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada arcu eros, auctor tristique magna consequat fringilla. Phasellus facilisis, ligula a faucibus pharetra, odio metus lobortis ex, at molestie dui nisi at elit. Donec ut urna quis ligula porta luctus in vitae nunc. Nunc cursus porttitor leo, non euismod ipsum viverra in. In hac habitasse platea dictumst. Suspendisse feugiat facilisis nibh quis sagittis. Sed luctus lacus at arcu porta, sed euismod diam dignissim. Curabitur sed semper odio, a fringilla ligula. Sed pharetra nisi ut accumsan ultricies."
+  },
+  "menu": {
+    "products": [
+      {
+        "id": "1",
+        "name": "Bolo Sorvete",
+        "description": "Um bolo a base de sorvete para agradar suas tardes mais quentes.",
+        "price": 80,
+        "category": "Bolos",
+        "image_url": "https://docs.google.com/uc?id=1CWyV3gf03zc05GPwAP_dWXTQxGgGQbZc"
+      },
+      {
+        "id": "2",
+        "name": "Bolo de Ameixa",
+        "description": "Um bolo de Ameixa estrangeira com creme de limão.",
+        "price": 64,
+        "category": "Bolos",
+        "image_url": "https://docs.google.com/uc?id=18N6TPaEFx4J1DqnS4L52_mpIN2WP2ZQX"
+      },
+      {
+        "id": "3",
+        "name": "Bolo de Brigadeiro",
+        "description": "Um bolo de brigadeiro com calda de chocolate.",
+        "price": 72,
+        "category": "Bolos",
+        "image_url": "https://docs.google.com/uc?id=1YkrCjrn42A2oU6cUCxsncV0hxFapNgnR"
+      },
+      {
+        "id": "4",
+        "name": "Bolo de Chocolate",
+        "description": "Um bolo de chocolate com calda de chocolate e bolinhas granuladas.",
+        "price": 50,
+        "category": "Bolos",
+        "image_url": "https://docs.google.com/uc?id=1fZJjD4GxRuGAA4gF-WKTPkN-GD5HUqx7"
+      },
+      {
+        "id": "5",
+        "name": "Bolo de Biscoito",
+        "description": "Um bolo de biscoito com calda de creme e vários biscoitos em seu topo.",
+        "price": 76,
+        "category": "Bolos",
+        "image_url": "https://docs.google.com/uc?id=1TzvsPSFZamNA83CcoprzF4jngrVQy2m7"
+      },
+      {
+        "id": "6",
+        "name": "Bolo de Sorvete de Morango",
+        "description": "Um bolo de sorvete de morango com calda de morango e uma bola de casquinha em seu topo.",
+        "price": 96,
+        "category": "Bolos",
+        "image_url": "https://docs.google.com/uc?id=1pp6urR5SXPEBA0BJNyDgCqSW9hqSfdr6"
+      },
+      {
+        "id": "7",
+        "name": "X-Burger",
+        "description": "Humburguer tamanho médio com duas carnes, queijo e molho.",
+        "price": 30,
+        "category": "Lanches",
+        "image_url": "https://docs.google.com/uc?id=1tsWKiihhNAY1RIHfwNl6M2dnfx0vqmLK"
+      },
+      {
+        "id": "8",
+        "name": "Hamburger de Siri",
+        "description": "Humburguer pequeno com uma carne, queijo, tomate e alface.",
+        "price": 22,
+        "category": "Lanches",
+        "image_url": "https://docs.google.com/uc?id=1NZW0mvhp18576zI4BTNqsuW6UK5fIqh2"
+      },
+      {
+        "id": "9",
+        "name": "Rosquinhas",
+        "description": "Caixa com 10 unidades de rosquinhas.",
+        "price": 20,
+        "category": "Lanches",
+        "image_url": "https://docs.google.com/uc?id=1r1GZT24UxG8qzv0CPHV6ZT22axb-E3AI"
+      },
+      {
+        "id": "10",
+        "name": "Rosquinhas Recheadas",
+        "description": "Caixa com 5 unidades de rosquinhas de sabores variados.",
+        "price": 38,
+        "category": "Lanches",
+        "image_url": "https://docs.google.com/uc?id=1IecU3GyN0LW4yXlRuB82zdZPRjEaj4pa"
+      },
+      {
+        "id": "11",
+        "name": "Rosquinha Sorteada",
+        "description": "Uma unidade de rosquinha com sabor variado.",
+        "price": 3,
+        "category": "Lanches",
+        "image_url": "https://docs.google.com/uc?id=1s9XA4s5FkfzCet9tohHyA3Imn7mXWFbt"
+      },
+      {
+        "id": "12",
+        "name": "Sundae de Chocolate",
+        "description": "Sundae de chocolate com biscoito.",
+        "price": 28,
+        "category": "Lanches",
+        "image_url": "https://docs.google.com/uc?id=1e8x72NXoOYxmMYbF56GP92fkohX_AMIl"
+      },
+      {
+        "id": "13",
+        "name": "Pão de Forma",
+        "description": "Pão de forma quentinho para um café da manhã.",
+        "price": 5,
+        "category": "Pães",
+        "image_url": "https://docs.google.com/uc?id=1fgv20QR-X-LGAFWVJMIN0UcAv9v4uUtF"
+      },
+      {
+        "id": "14",
+        "name": "Pão de Forma Crocante",
+        "description": "Pão de forma crocante quentinho para um chá da tarde.",
+        "price": 7,
+        "category": "Pães",
+        "image_url": "https://docs.google.com/uc?id=1qpdYK8ozlKtnsXQRRw1zhmCxaDgbodzE"
+      },
+      {
+        "id": "15",
+        "name": "Pão de Queijo",
+        "description": "Pão cocrante com queijo e temparado com queijo ralado.",
+        "price": 2,
+        "category": "Pães",
+        "image_url": "https://docs.google.com/uc?id=16XpCBpiso757_ljJ0fvaVqkM1saZt2vk"
+      },
+      {
+        "id": "16",
+        "name": "Pão Amanteigado",
+        "description": "Pão amanteigado com queijo ralado.",
+        "price": 3,
+        "category": "Pães",
+        "image_url": "https://docs.google.com/uc?id=1FJ6rY76HGDg--erVae4JXAxISMENCjlI"
+      },
+      {
+        "id": "17",
+        "name": "Pão Reke",
+        "description": "Pão com requeijão e queijo ralado.",
+        "price": 4,
+        "category": "Pães",
+        "image_url": "https://docs.google.com/uc?id=1yl1BU4KXlZIjrvbqvJo2UwWXy2N_GHY7"
+      }
+    ]
   }
 }

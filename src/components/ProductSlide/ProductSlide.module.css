@@ -1,0 +1,25 @@
+.wrapper {
+  margin-top: 3.75rem;
+  width: 100%;
+  padding: 0 0.2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1.25rem;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
