@@ -75,6 +75,30 @@
   box-shadow: 4px 2px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
+@media screen and (max-width: 1024px) {
+  .leftButton {
+    left: 5px;
+  }
+
+  .leftButton:hover {
+    box-shadow: none;
+  }
+
+  .rightButton {
+    right: 5px;
+  }
+
+  .rightButton:hover {
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .arrowButton {
+    display: none;
+  }
+}
+
 /* Scroll Config */
 ::-webkit-scrollbar {
   width: 10px;
