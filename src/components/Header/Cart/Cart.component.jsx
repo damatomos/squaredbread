@@ -4,7 +4,7 @@ import styles from './Cart.module.css';
 import { useNavigate } from 'react-router-dom';
 
 // Images
-import CartSVG from './../../../assets/cart_line.svg?component';
+import CartSVG from './../../../assets/cart_fill.svg?component';
 
 function Cart() {
 

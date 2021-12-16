@@ -1,4 +1,5 @@
 .wrapper {
+  position: relative;
   min-width: 240px;
   min-height: 320px;
   max-width: 240px;
@@ -13,4 +14,29 @@
 .image {
   width: 100%;
   height: 100%;
+}
+
+.wrapper:hover .over {
+  opacity: 0.8;
+}
+
+.over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--word);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.over svg {
+  width: 64px;
+  height: 64px;
+  fill: white;
 }
