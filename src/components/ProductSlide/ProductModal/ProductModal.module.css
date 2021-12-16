@@ -140,10 +140,12 @@
 
 .btnCount .minus {
   border-radius: 4px 0px 0px 4px;
+  background: white;
 }
 
 .btnCount .plus {
   border-radius: 0px 4px 4px 0px;
+  background: white;
 }
 
 .btnAdd {
@@ -152,6 +154,7 @@
   font-size: 1.2rem;
   font-family: var(--font-secondary);
   font-weight: bold;
+  background: white;
   box-shadow: 0 0 0 3px var(--yellow);
   cursor: pointer;
 }
