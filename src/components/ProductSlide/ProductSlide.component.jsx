@@ -9,13 +9,12 @@ import Product from './Product/Product.component';
 import LeftArrowSVG from './../../assets/left_arrow.svg?component';
 import RightArrowSVG from './../../assets/right_arrow.svg?component';
 
-function ProductSlide({name, products}) {
+function ProductSlide({name, products, setViewModal}) {
 
   const slideRef = React.useRef();
 
   function handleWheel(event) {
     if(event.deltaY > 0) {
-      console.log(event.target);
       event.target.scrollBy(300, 0);
     } else if (event.deltaY < 0) {
       event.target.scrollBy(-300, 0);
@@ -41,7 +40,7 @@ function ProductSlide({name, products}) {
         <div ref={slideRef} className={styles.slide} onWheel={handleWheel}>
           {
             products && products.map((product) => {
-              return <Product key={product.id} id={product.id} image_url={product.image_url} />
+              return <Product setViewModal={setViewModal} key={product.id} id={product.id} image_url={product.image_url} />
             })
           }
         </div>
