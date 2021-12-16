@@ -139,6 +139,30 @@
         "price": 4,
         "category": "Pães",
         "image_url": "https://docs.google.com/uc?id=1yl1BU4KXlZIjrvbqvJo2UwWXy2N_GHY7"
+      },
+      {
+        "id": "18",
+        "name": "Suco de Gengibre com Pepino",
+        "description": "Tenha um dia saudável com um bom suco pela manhã para perder calorias.",
+        "price": 8.50,
+        "category": "Bebidas",
+        "image_url": "https://docs.google.com/uc?id=1CBtt2r6r0q-s5te-yBCzFOkj1v09gcd6"
+      },
+      {
+        "id": "19",
+        "name": "Suco de Laranja",
+        "description": "Tenha um dia saudável com vitamina C bebendo um suco de laranja geladinho.",
+        "price": 12.99,
+        "category": "Bebidas",
+        "image_url": "https://docs.google.com/uc?id=18lB8Hdp7rSNeJLztefKdNxWhRThXy2li"
+      },
+      {
+        "id": "20",
+        "name": "Suco de Manga",
+        "description": "Suco de Manga com leite no capricho, experimente nas tardes ensolaradas.",
+        "price": 5.99,
+        "category": "Bebidas",
+        "image_url": "https://docs.google.com/uc?id=1Q6VmRYDAEkQwYJH66rYqn3KtgsvfKq4J"
       }
     ]
   }

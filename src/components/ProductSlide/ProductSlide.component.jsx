@@ -13,6 +13,8 @@ function ProductSlide({name, products, setViewModal}) {
 
   const slideRef = React.useRef();
 
+  const [activeArrow, setActiveArrow] = React.useState(true);
+
   function handleWheel(event) {
     if(event.deltaY > 0) {
       event.target.scrollBy(300, 0);
@@ -33,6 +35,14 @@ function ProductSlide({name, products, setViewModal}) {
     moveScroll(1);
   }
 
+  React.useEffect(() => {
+    if ( products.length < 4) {
+      setActiveArrow(false);
+    } else {
+      setActiveArrow(true);
+    }
+  }, [slideRef]);
+
   return (
     <section className={styles.wrapper}>
       <h2 className={styles.title}>{name}</h2>
@@ -44,8 +54,15 @@ function ProductSlide({name, products, setViewModal}) {
             })
           }
         </div>
-        <span onClick={leftArrow} className={`${styles.arrowButton} ${styles.leftButton}`}> <LeftArrowSVG/> </span>
-        <span onClick={rightArrow} className={`${styles.arrowButton} ${styles.rightButton}`}> <RightArrowSVG/> </span>
+        {
+          activeArrow && 
+          (
+            <>
+              <span onClick={leftArrow} className={`${styles.arrowButton} ${styles.leftButton}`}> <LeftArrowSVG/> </span>
+              <span onClick={rightArrow} className={`${styles.arrowButton} ${styles.rightButton}`}> <RightArrowSVG/> </span>
+            </>
+          )
+        }
       </div>
     </section>
   );

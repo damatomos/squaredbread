@@ -1,0 +1,14 @@
+.wrapper {
+  background: var(--word);
+  color: var(--yellow-light);
+  padding: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
+  transition: 0.4s;
+  margin-top: 1rem;
+}
+
+.wrapper:hover {
+  background: black;
+  color: var(--yellow);
+}

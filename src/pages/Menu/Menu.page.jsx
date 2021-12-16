@@ -16,10 +16,12 @@ function Menu() {
   const bolos = { name: 'Bolos', products: []};
   const lanches = { name: 'Lanches', products: []};
   const paes = { name: 'Pães', products: []};
+  const bebidas = { name: 'Bebidas', products: []};
     
   bolos.products = menuContents.products.filter(product => product.category == 'Bolos' );
   lanches.products = menuContents.products.filter(product => product.category == 'Lanches' );
   paes.products = menuContents.products.filter(product => product.category == 'Pães' );
+  bebidas.products = menuContents.products.filter(product => product.category == 'Bebidas' );
 
   const [viewModal, setViewModal] = React.useState(null);
 
@@ -30,6 +32,7 @@ function Menu() {
         <ProductSlide setViewModal={setViewModal} name={bolos.name} products={bolos.products}/>
         <ProductSlide setViewModal={setViewModal} name={lanches.name} products={lanches.products}/>
         <ProductSlide setViewModal={setViewModal} name={paes.name} products={paes.products}/>
+        <ProductSlide setViewModal={setViewModal} name={bebidas.name} products={bebidas.products}/>
       </div>
       {
         viewModal && <ProductModal setViewModal={setViewModal}  productId={viewModal}/>
