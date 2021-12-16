@@ -13,13 +13,85 @@
   margin-bottom: 1.25rem;
 }
 
+.sliderContainer {
+  position: relative;
+}
+
 .slide {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: start;
   gap: 1.25rem;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
+}
+
+.arrowButton {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+}
+
+.arrowButton svg {
+  width: 80%;
+  height: 80%;
+  fill: var(--yellow-dark);
+}
+
+.arrowButton:hover {
+  opacity: 1;
+}
+
+.arrowButton:hover svg {
+  fill: var(--yellow);
+}
+
+.leftButton {
+  left: -25px;
+}
+
+.leftButton:hover {
+  box-shadow: -4px 2px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+.rightButton {
+  right: -25px;
+}
+
+.rightButton:hover {
+  box-shadow: 4px 2px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Scroll Config */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--yellow-transparent);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--yellow-light); 
 }

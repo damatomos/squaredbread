@@ -5,7 +5,13 @@ import styles from './ProductSlide.module.css';
 // Components
 import Product from './Product/Product.component';
 
+// Images
+import LeftArrowSVG from './../../assets/left_arrow.svg?component';
+import RightArrowSVG from './../../assets/right_arrow.svg?component';
+
 function ProductSlide({name, products}) {
+
+  const slideRef = React.useRef();
 
   function handleWheel(event) {
     if(event.deltaY > 0) {
@@ -16,15 +22,31 @@ function ProductSlide({name, products}) {
     }
   }
 
+  function moveScroll(arrow) {
+    slideRef.current.scrollBy( arrow * 260,0);
+  }
+
+  function leftArrow(event) {
+    moveScroll(1);
+  }
+
+  function rightArrow(event) {
+    moveScroll(-1);
+  }
+
   return (
     <section className={styles.wrapper}>
       <h2 className={styles.title}>{name}</h2>
-      <div className={styles.slide} onWheel={handleWheel}>
-        {
-          products && products.map((product) => {
-            return <Product key={product.id} id={product.id} image_url={product.image_url} />
-          })
-        }
+      <div className={styles.sliderContainer}>
+        <div ref={slideRef} className={styles.slide} onWheel={handleWheel}>
+          {
+            products && products.map((product) => {
+              return <Product key={product.id} id={product.id} image_url={product.image_url} />
+            })
+          }
+        </div>
+        <span onClick={leftArrow} className={`${styles.arrowButton} ${styles.leftButton}`}> <LeftArrowSVG/> </span>
+        <span onClick={rightArrow} className={`${styles.arrowButton} ${styles.rightButton}`}> <RightArrowSVG/> </span>
       </div>
     </section>
   );

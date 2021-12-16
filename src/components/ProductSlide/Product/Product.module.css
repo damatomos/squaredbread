@@ -8,7 +8,6 @@
   box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   scroll-snap-align: start;
-  pointer-events: none;
 }
 
 .image {
