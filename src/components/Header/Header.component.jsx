@@ -6,7 +6,7 @@ import Menu from "./Menu/Menu.component";
 import MenuMobile from "./MenuMobile/MenuMobile.component";
 
 function Header() {
-  const mobile = useMedia('(max-width: 768px)');
+  const mobile = useMedia('(max-width: 840px)');
   
   return (
     <header className={styles.wrapper} >

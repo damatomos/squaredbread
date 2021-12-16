@@ -1,0 +1,67 @@
+.wrapper {
+  position: relative;
+  background: var(--yellow-light);
+  padding: 10px 15px;
+  letter-spacing: 0.1rem;
+  color: var(--word);
+  font-weight: 500;
+  font-size: 0.8rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper:hover {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.wrapper:hover svg {
+  animation: carrun 0.8s forwards;
+}
+
+@keyframes carrun {
+  from {
+    transform: initial;
+    opacity: 1;
+  }
+  to {
+    width: 0;
+    transform: translateX(40px);
+    opacity: 0;
+  }
+}
+
+
+
+.counter {
+  position: absolute;
+  background: var(--yellow-dark);
+  color: var(--yellow);
+  border-radius: 4px;
+  height: 24px;
+  padding: 1rem 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  top: -4px;
+  left: calc(100% - 20px);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.wrapper:hover .counter {
+  animation: updownsize 0.8s forwards;
+}
+
+@keyframes updownsize {
+  50% {
+    font-size: 1rem;
+  }
+  to {
+    font-size: 0.8rem;
+  }
+}

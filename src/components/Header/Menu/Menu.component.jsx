@@ -8,13 +8,17 @@ import BtnLogin from "./../BtnLogin/BtnLogin.component";
 
 // Images
 import Logo from '../../../assets/favicon.svg?component';
+import Cart from '../Cart/Cart.component';
 
 function Menu() {
   return (
     <div className={`container ${styles.wrapper}`}>
       <Logo/>
       <Nav/>
-      <BtnLogin/>
+      <div className={styles.account}>
+        <BtnLogin/>
+        <Cart/>
+      </div>
     </div>
   );
 }

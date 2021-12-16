@@ -6,7 +6,7 @@
   padding: 0 50px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 840px) {
   .wrapper {
     min-height: 80px;
     height: auto;

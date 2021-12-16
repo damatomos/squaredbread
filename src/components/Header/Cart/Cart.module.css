@@ -1,0 +1,54 @@
+.wrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.wrapper svg {
+  width: 60%;
+  height: 60%;
+  fill: var(--yellow-light);
+}
+
+.wrapper:hover svg {
+  width: 64%;
+  height: 64%;
+  fill: var(--yellow-light);
+  opacity: 0.9;
+}
+
+.counter {
+  position: absolute;
+  background: var(--yellow-dark);
+  color: var(--yellow);
+  border-radius: 4px;
+  height: 24px;
+  padding: 1rem 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  top: -4px;
+  left: calc(100% - 20px);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.wrapper:hover .counter {
+  animation: updownsize 0.8s forwards;
+}
+
+@keyframes updownsize {
+  50% {
+    font-size: 1rem;
+  }
+  to {
+    font-size: 0.8rem;
+  }
+}

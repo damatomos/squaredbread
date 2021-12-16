@@ -11,6 +11,7 @@ import Toggle from "../Toggle/Toggle.component";
 
 // Images
 import Logo from '../../../assets/favicon.svg?component';
+import CartMobile from '../CartMobile/CartMobile.component';
 
 function MenuMobile() {
   const [navActive, setNavActive] = React.useState(false);
@@ -29,7 +30,10 @@ function MenuMobile() {
       
       <div className={`${styles.content} ${navActive ? styles.hidden : ''}`}>
         <Nav/>
-        <BtnLogin/>
+        <div className={styles.account}>
+          <BtnLogin/>
+          <CartMobile/>
+        </div>
       </div>
     </div>
   );

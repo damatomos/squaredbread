@@ -54,3 +54,12 @@
   display: flex;
   justify-content: space-between;
 }
+
+.account {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}

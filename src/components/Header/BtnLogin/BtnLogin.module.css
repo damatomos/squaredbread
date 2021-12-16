@@ -1,12 +1,12 @@
 .wrapper {
-  background: var(--yellow-light);
+  background: var(--word);
   padding: 10px 15px;
   letter-spacing: 0.1rem;
-  color: var(--word);
-  border: 1px solid var(--yellow);
+  color: var(--yellow-light);
   cursor: pointer;
 }
 
 .wrapper:hover {
+  background: black;
   color: var(--yellow);
 }

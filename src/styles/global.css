@@ -69,7 +69,7 @@ button, input, textarea {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 840px) {
   html, body {
     font-size: 14px;
   }
