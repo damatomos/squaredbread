@@ -26,12 +26,12 @@ function ProductSlide({name, products}) {
     slideRef.current.scrollBy( arrow * 260,0);
   }
 
-  function leftArrow(event) {
-    moveScroll(1);
+  function leftArrow() {
+    moveScroll(-1);
   }
 
-  function rightArrow(event) {
-    moveScroll(-1);
+  function rightArrow() {
+    moveScroll(1);
   }
 
   return (

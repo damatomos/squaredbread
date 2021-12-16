@@ -2,6 +2,8 @@ import React from 'react';
 
 import styles from './MenuMobile.module.css';
 
+import { useLocation } from 'react-router-dom';
+
 // Components
 import Nav from "../Nav/Nav.component";
 import BtnLogin from "../BtnLogin/BtnLogin.component";
@@ -12,6 +14,11 @@ import Logo from '../../../assets/favicon.svg?component';
 
 function MenuMobile() {
   const [navActive, setNavActive] = React.useState(false);
+  const location = useLocation();
+
+  React.useEffect( () => {
+    setNavActive(false);
+  }, [location.pathname]);
 
   return (
     <div className={`container ${styles.wrapper} ${navActive ? styles.newScale : ''}`}>
