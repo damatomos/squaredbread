@@ -1,5 +1,7 @@
 import React from 'react';
 
+import uuid from 'react-uuid';
+
 export const CartContext = React.createContext();
 
 export const CartStorage = ({children}) => {
@@ -10,6 +12,11 @@ export const CartStorage = ({children}) => {
   React.useEffect(() => {
     let local = window.localStorage.getItem('cart');
     if (local) {
+      if (!local.products && !local.length) {
+        window.localStorage.removeItem('cart');
+        local = { products: [], length: 0 };
+        window.localStorage.setItem('cart', JSON.stringify(local));
+      }
       setCount(JSON.parse(local).length);
       setProducts(JSON.parse(local).products);
     } else {
@@ -35,19 +42,38 @@ export const CartStorage = ({children}) => {
   }
 
   function addProduct(product, count) {
+    product.carId = uuid();
     getCart().then( async (cart) => {
       const newCart = { products: [...cart.products, {product, count}], length: cart.products.length + 1 };
       await save(newCart);
     })
   }
 
-  async function removeProduct({product, count}) {
+  async function updateCountProduct({product, count}) {
     try {
       let { products } = await getCart();
 
       if (products) {
         products.map((item, index) => {
-          if (item.product.id == product.id && item.count == count) {
+          if (item.product.carId === product.carId) {
+            item.count = count;
+            products[index] = item;
+          }
+        });
+        await save({products, length: products.length});
+      }
+    } catch (err) {
+      console.log('Erro ao remover produto: ', err);
+    }
+  }
+
+  async function removeProduct(carId) {
+    try {
+      let { products } = await getCart();
+
+      if (products) {
+        products.map((item, index) => {
+          if (item.product.carId === carId) {
             products.splice(index, 1);
           }
         });
@@ -58,7 +84,7 @@ export const CartStorage = ({children}) => {
     }
   }
 
-  return <CartContext.Provider value={ {clearAll, getCart, count, products, addProduct, removeProduct} }>
+  return <CartContext.Provider value={ {clearAll, getCart, count, products, addProduct, removeProduct, updateCountProduct} }>
     {children}
   </CartContext.Provider>
 

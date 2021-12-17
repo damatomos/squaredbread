@@ -110,54 +110,6 @@
   margin-top: 1rem;
 }
 
-.btnCount {
-  height: 40px;
-  min-width: 6rem;
-  background: white;
-
-  display: grid;
-  grid-template-columns: 2rem 1fr 2rem;
-  align-items: center;
-  text-align: center;
-  gap: 0.4rem;
-  border-radius: 4px;
-
-  font-size: 1.2rem;
-  font-family: var(--font-secondary);
-  font-weight: bold;
-  
-  box-shadow: 0 0 0 3px var(--yellow);
-}
-
-.btnCount:hover {
-  box-shadow: 0 0 0 3px var(--yellow-light);
-}
-
-.btnCount button {
-  padding: 0 0.2rem;
-  height: 100%;
-  font-size: 1.2rem;
-  font-family: var(--font-secondary);
-  font-weight: bold;
-  color: var(--yellow);
-  cursor: pointer;
-}
-
-.btnCount button:hover {
-  background: var(--yellow-light);
-  color: white;
-}
-
-.btnCount .minus {
-  border-radius: 4px 0px 0px 4px;
-  background: white;
-}
-
-.btnCount .plus {
-  border-radius: 0px 4px 4px 0px;
-  background: white;
-}
-
 .btnAdd {
   height: 40px;
   padding: 0 2rem;

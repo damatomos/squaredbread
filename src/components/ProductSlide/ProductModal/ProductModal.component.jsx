@@ -5,6 +5,11 @@ import styles from './ProductModal.module.css';
 import formatter from 'currency-formatter';
 
 import contents from './../../../assets/contents.json';
+
+// Components
+import Counter from './../../Counter/Counter.component';
+
+// Contexts
 import { CartContext } from '../../../contexts/CartContext';
 
 function ProductModal({productId, setViewModal}) {
@@ -16,18 +21,6 @@ function ProductModal({productId, setViewModal}) {
   
   function handleOutsideClick(event) {
     if (event.target === event.currentTarget) setViewModal(null);
-  }
-  
-  function addCount() {
-    if ( countProduct < 1000 ) {
-      setCountProduct((count) => count + 1);
-    }
-  }
-
-  function removeCount() {
-    if (countProduct > 0) {
-      setCountProduct((count) => count - 1);
-    }
   }
 
   function addProduct() {
@@ -53,11 +46,7 @@ function ProductModal({productId, setViewModal}) {
           <p className={styles.description}>{product.description}</p>
           <span className={styles.price}>{formatter.format(product.price, { code: 'BRL'})}</span>
           <div className={styles.btnContainer}>
-            <span className={styles.btnCount}>
-              <button className={styles.minus} onClick={removeCount}>-</button>
-                {countProduct}
-              <button className={styles.plus} onClick={addCount}>+</button>
-            </span>
+            <Counter setCounter={setCountProduct}>{countProduct}</Counter>
             <button className={styles.btnAdd} onClick={addProduct}>Adicionar</button>
           </div>
         </div>

@@ -1,0 +1,49 @@
+
+.wrapper {
+  height: 40px;
+  min-width: 96px;
+  background: white;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 0.4rem;
+  border-radius: 4px;
+
+  font-size: 1.2rem;
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  
+  box-shadow: 0 0 0 3px var(--yellow);
+}
+
+.wrapper:hover {
+  box-shadow: 0 0 0 3px var(--yellow-light);
+}
+
+.wrapper button {
+  padding: 0 0.4rem;
+  height: 100%;
+  font-size: 1.2rem;
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  color: var(--yellow);
+  cursor: pointer;
+}
+
+.wrapper button:hover {
+  background: var(--yellow-light);
+  color: white;
+}
+
+.wrapper .minus {
+  border-radius: 4px 0px 0px 4px;
+  background: white;
+}
+
+.wrapper .plus {
+  border-radius: 0px 4px 4px 0px;
+  background: white;
+}

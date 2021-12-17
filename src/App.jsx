@@ -14,6 +14,8 @@ import Login from './pages/Login/Login.page';
 
 // Contexts
 import { CartStorage } from './contexts/CartContext';
+import Register from './pages/Register/Register.page';
+import Cart from './pages/Cart/Cart.page';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/menu" element={<Menu/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
+          <Route path="/cart" element={<Cart/>}/>
         </Routes>
         <Footer/>
       </CartStorage>
