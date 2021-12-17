@@ -20,9 +20,7 @@ function Cart() {
   }
 
   React.useEffect(() => {
-    if (count) {
-      setCounter(count);
-    }
+    setCounter(count);
   }, [count]);
 
   return (

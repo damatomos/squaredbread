@@ -5,6 +5,7 @@ import styles from './Cart.module.css';
 // Contexts
 import { CartContext } from './../../contexts/CartContext';
 import CartProduct from '../../components/CartProduct/CartProduct.component';
+import CartOrder from '../../components/CartOrder/CartOrder.component';
 
 function Cart() {
 
@@ -15,7 +16,7 @@ function Cart() {
   React.useEffect( async () => {
     const cart = await cartContext.getCart();
     if ( cart && cart.products ) {
-      setProducts(cart.products);
+      setProducts(cart.products.reverse());
     }
   }, [cartContext.count]);
 
@@ -25,16 +26,16 @@ function Cart() {
 
         <div className={styles.cartContainer}>
           {
-            products.length > 0 ? products.map((item, index) => {
+            products.length > 0 ? products.map((item) => {
               return (
-                <CartProduct key={index} item={item} />
+                <CartProduct key={item.product.carId} item={item} />
               );
             }) :
             <p className={styles.message}>Nenhum produto no carrinho!</p>
           }
         </div>
         <div className={styles.sendContainer}>
-          <h1>SEND</h1>
+          <CartOrder/>
         </div>
 
       </div>

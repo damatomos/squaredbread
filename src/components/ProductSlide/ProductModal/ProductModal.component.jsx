@@ -31,6 +31,7 @@ function ProductModal({productId, setViewModal}) {
     try {
       cartContext.addProduct(product, countProduct);
       setViewModal(null);
+      window.scrollTo(0, 0);
       navigate('/cart');
     } catch(err) {
       console.log("Erro ao salvar o produto");
