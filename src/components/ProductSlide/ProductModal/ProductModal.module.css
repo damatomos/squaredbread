@@ -25,6 +25,16 @@
   border-radius: 4px;
   margin: 2rem;
   padding: 2rem;
+  animation: show 0.4s forwards;
+}
+
+@keyframes show {
+  from {
+    transform: scale(0.3);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .image {
@@ -177,6 +187,7 @@
   .content {
     display: flex;
     flex-direction: column;
+
   }
 
   .image {
