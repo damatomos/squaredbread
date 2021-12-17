@@ -84,8 +84,10 @@ export const CartStorage = ({children}) => {
       return products.reduce((prev, current) => {
         return prev.count + current.count;
       });
-    } else {
+    } else if (products.length == 1 ) {
       return products[0].count;
+    } else {
+      return 0;
     }
   }
 
@@ -102,6 +104,7 @@ export const CartStorage = ({children}) => {
         local = { products: [], length: 0 };
         window.localStorage.setItem('cart', JSON.stringify(local));
       }
+
       setCount(getCountProducts(JSON.parse(local).products));
       setProducts(JSON.parse(local).products);
     } else {
