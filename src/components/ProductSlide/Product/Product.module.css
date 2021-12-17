@@ -16,7 +16,7 @@
   height: 100%;
 }
 
-.wrapper:hover .over {
+.wrapper:hover .over, .wrapper:focus .over {
   opacity: 0.8;
 }
 

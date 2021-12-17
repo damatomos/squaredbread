@@ -59,7 +59,7 @@ button, input, textarea {
 }
 
 .page {
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
 }
 
 @media screen and (max-width: 960px) {

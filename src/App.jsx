@@ -10,6 +10,9 @@ import Home from './pages/Home/Home.page';
 import About from './pages/About/About.page';
 import Menu from './pages/Menu/Menu.page';
 import Contact from './pages/Contact/Contact.page';
+import Login from './pages/Login/Login.page';
+
+// Contexts
 import { CartStorage } from './contexts/CartContext';
 
 function App() {
@@ -22,6 +25,7 @@ function App() {
           <Route path="/about-us" element={<About/>}/>
           <Route path="/menu" element={<Menu/>}/>
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="/login" element={<Login/>}/>
         </Routes>
         <Footer/>
       </CartStorage>
