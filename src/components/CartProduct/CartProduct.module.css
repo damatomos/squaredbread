@@ -52,6 +52,10 @@
   justify-self: center;
 }
 
+.title {
+  font-size: 1.2rem;
+}
+
 .price {
   font-size: 1.2rem;
   font-weight: 700;
@@ -94,6 +98,10 @@
 @media screen and (max-width: 426px) {
   .wrapper {
     grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 1.5rem;
   }
 
   .price {

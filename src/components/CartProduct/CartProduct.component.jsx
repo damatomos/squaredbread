@@ -15,7 +15,7 @@ function CartProduct({item, ...props}) {
   
   const {product, count} = item;
 
-  const [counter, setCounter] = React.useState(0);
+  const [counter, setCounter] = React.useState(1);
 
   const cartContext = React.useContext(CartContext);
 
@@ -42,8 +42,8 @@ function CartProduct({item, ...props}) {
           style={{backgroundImage: `url(${product.image_url})`}} 
           className={styles.image}></span>
         <span className={styles.info}>
-          <h4>{product.name.substr(0, 20)}{product.name.length > 20 ? '...' : ''}</h4>
-          <p>{product.description.substr(0, 20)}{product.description.length > 20 ? '...' : ''}</p>
+          <h4 className={styles.title}>{product.name.substr(0, 20)}{product.name.length > 20 ? '...' : ''}</h4>
+          <p className={styles.description}>{product.description.substr(0, 20)}{product.description.length > 20 ? '...' : ''}</p>
         </span>
       </span>
       <span className={styles.values}>

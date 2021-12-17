@@ -18,7 +18,7 @@ function Counter({children, addClass, setCounter}) {
   function removeCount() {
     if ( setCounter ) {
       setCounter((counter) => {
-        if (counter > 0) {
+        if (counter > 1) {
           return counter - 1;
         }
         return counter;

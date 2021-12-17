@@ -6,6 +6,8 @@ import formatter from 'currency-formatter';
 
 import contents from './../../../assets/contents.json';
 
+import { useNavigate } from 'react-router-dom';
+
 // Components
 import Counter from './../../Counter/Counter.component';
 
@@ -15,7 +17,9 @@ import { CartContext } from '../../../contexts/CartContext';
 function ProductModal({productId, setViewModal}) {
 
   const [product, setProduct] = React.useState({image_url: '', name: '' });
-  const [countProduct, setCountProduct] = React.useState(0);
+  const [countProduct, setCountProduct] = React.useState(1);
+
+  const navigate = useNavigate();
 
   const cartContext = React.useContext(CartContext);
   
@@ -27,6 +31,7 @@ function ProductModal({productId, setViewModal}) {
     try {
       cartContext.addProduct(product, countProduct);
       setViewModal(null);
+      navigate('/cart');
     } catch(err) {
       console.log("Erro ao salvar o produto");
     }
