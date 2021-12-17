@@ -15,7 +15,7 @@ function CartProduct({item, ...props}) {
   
   const {product, count} = item;
 
-  const [counter, setCounter] = React.useState(1);
+  const [counter, setCounter] = React.useState(count);
 
   const cartContext = React.useContext(CartContext);
 
