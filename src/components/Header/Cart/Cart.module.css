@@ -21,6 +21,19 @@
   height: 64%;
   fill: var(--yellow-light);
   opacity: 0.9;
+  animation: carrun 1s backwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes carrun {
+  from {
+    transform: initial;
+    opacity: 1;
+  }
+  to {
+    transform: translateX(60px);
+    opacity: 0;
+  }
 }
 
 .counter {

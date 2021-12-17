@@ -10,18 +10,21 @@ import Home from './pages/Home/Home.page';
 import About from './pages/About/About.page';
 import Menu from './pages/Menu/Menu.page';
 import Contact from './pages/Contact/Contact.page';
+import { CartStorage } from './contexts/CartContext';
 
 function App() {
   return (
     <BrowserRouter>
-      <Header/>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about-us" element={<About/>}/>
-        <Route path="/menu" element={<Menu/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-      </Routes>
-      <Footer/>
+      <CartStorage>
+        <Header/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/about-us" element={<About/>}/>
+          <Route path="/menu" element={<Menu/>}/>
+          <Route path="/contact" element={<Contact/>}/>
+        </Routes>
+        <Footer/>
+      </CartStorage>
     </BrowserRouter>
   )
 }

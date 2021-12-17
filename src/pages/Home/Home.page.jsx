@@ -12,7 +12,7 @@ function Home() {
   const products = contents.menu.products.filter((product, index) => {
     if (index % 2 == 0 && index < 8) return product;
   })
-  console.log(products);
+  
   return (
     <div className={`page ${styles.wrapper}`}>
       <Banner/>

@@ -5,10 +5,13 @@ import { useNavigate } from 'react-router-dom';
 
 // Images
 import CartSVG from './../../../assets/cart_fill.svg?component';
+import { CartContext } from '../../../contexts/CartContext';
 
 function Cart() {
 
   const [counter, setCounter] = React.useState(0);
+
+  const { count } = React.useContext(CartContext);
 
   const navigate = useNavigate();
 
@@ -17,12 +20,10 @@ function Cart() {
   }
 
   React.useEffect(() => {
-
-    const cart = window.localStorage.getItem('cart');
-    if (cart) {
-      setCounter(cart.length);
+    if (count) {
+      setCounter(count);
     }
-  }, []);
+  }, [count]);
 
   return (
     <div className={styles.wrapper} onClick={handleClick}>

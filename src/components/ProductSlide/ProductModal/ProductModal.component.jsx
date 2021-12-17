@@ -5,11 +5,14 @@ import styles from './ProductModal.module.css';
 import formatter from 'currency-formatter';
 
 import contents from './../../../assets/contents.json';
+import { CartContext } from '../../../contexts/CartContext';
 
 function ProductModal({productId, setViewModal}) {
 
   const [product, setProduct] = React.useState({image_url: '', name: '' });
   const [countProduct, setCountProduct] = React.useState(0);
+
+  const cartContext = React.useContext(CartContext);
   
   function handleOutsideClick(event) {
     if (event.target === event.currentTarget) setViewModal(null);
@@ -28,8 +31,12 @@ function ProductModal({productId, setViewModal}) {
   }
 
   function addProduct() {
-    console.log(countProduct);
-    setViewModal(null);
+    try {
+      cartContext.addProduct(product, countProduct);
+      setViewModal(null);
+    } catch(err) {
+      console.log("Erro ao salvar o produto");
+    }
   }
 
   React.useEffect(() => {
