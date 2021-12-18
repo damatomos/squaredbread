@@ -1,11 +1,13 @@
 .wrapper {
   padding: 3.5rem 1rem;
+  position: relative;
 }
 
 .content {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1rem;
+  position: relative;
 }
 
 .cartContainer {

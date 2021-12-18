@@ -10,7 +10,7 @@ import { CartContext } from '../../contexts/CartContext';
 import Button from './../Form/Button/Button.component';
 import { Link } from 'react-router-dom';
 
-function CartOrder() {
+function CartOrder({setSuccess}) {
   
   const cartContext = React.useContext(CartContext);
 
@@ -25,11 +25,14 @@ function CartOrder() {
   }
 
   async function handleConfirm() {
-    try {
-      let clean = await cartContext.clearAll();
-      if (clean) await updateOrder();
-    } catch (err) {
-      console.log(err);
+    if (count > 0 && total > 0) {
+      try {
+        let clean = await cartContext.clearAll();
+        if (clean) await updateOrder();
+        setSuccess("Que ótimo! Seu pedido saiu para entrega!");
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
 

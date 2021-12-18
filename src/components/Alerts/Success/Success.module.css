@@ -1,0 +1,60 @@
+.wrapper {
+  background: #257425;
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+
+  border-radius: 4px;
+  padding: 1rem;
+
+  box-shadow: 0 6px 12px 0px rgba(0, 0, 0, 0.5);
+
+  transition: hover 0.3s;
+  animation: success 1s linear forwards;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  color: white;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  background: rgba(0, 0, 0, 0.3);
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 0px 4px 0px 50%;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close svg {
+  fill: var(--yellow);
+  transition: 0.2s;
+}
+
+.close:hover svg {
+  fill: var(--yellow-light);
+}
+
+@keyframes success {
+  from {
+    top: -400px;
+  }
+  to {
+    top: 0;
+  }
+}

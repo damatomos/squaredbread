@@ -6,10 +6,13 @@ import styles from './Cart.module.css';
 import { CartContext } from './../../contexts/CartContext';
 import CartProduct from '../../components/CartProduct/CartProduct.component';
 import CartOrder from '../../components/CartOrder/CartOrder.component';
+import Success from '../../components/Alerts/Success/Success.component';
 
 function Cart() {
 
   const cartContext = React.useContext(CartContext);
+
+  const [success, setSuccess] = React.useState(null);
 
   const [products, setProducts] = React.useState([]);
 
@@ -35,9 +38,11 @@ function Cart() {
           }
         </div>
         <div className={styles.sendContainer}>
-          <CartOrder/>
+          <CartOrder setSuccess={setSuccess}/>
         </div>
-
+        {
+          success && <Success setSuccess={setSuccess}>{success}</Success>
+        }
       </div>
     </section>
   );
