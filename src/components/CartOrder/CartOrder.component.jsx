@@ -8,6 +8,7 @@ import formatter from 'currency-formatter';
 import { CartContext } from '../../contexts/CartContext';
 
 import Button from './../Form/Button/Button.component';
+import { Link } from 'react-router-dom';
 
 function CartOrder() {
   
@@ -16,12 +17,25 @@ function CartOrder() {
   const [total, setTotal] = React.useState(0);
   const [count, setCount] = React.useState(0);
 
-  React.useEffect(async () => {
+  async function updateOrder() {
     let cart = await cartContext.getCart();
     let products = cart.products;
     setTotal(await cartContext.getTotal(products));
     setCount(await cartContext.getCount());
-  });
+  }
+
+  async function handleConfirm() {
+    try {
+      let clean = await cartContext.clearAll();
+      if (clean) await updateOrder();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  React.useEffect(async () => {
+    await updateOrder();
+  }, [cartContext.count]);
   
   return (
     <div className={styles.wrapper}>
@@ -30,7 +44,8 @@ function CartOrder() {
       <hr className={styles.line}/>
       <span className={styles.price}>Total: <span className={styles.value}>{formatter.format(total, {currency: 'pt-br', code: 'BRL'})}</span></span>
       <span className={styles.btnContainer}>
-        <Button addClass={styles.btn}>Confirmar Pedido</Button>
+        <Button addClass={styles.btn} onClick={handleConfirm}>Confirmar Pedido</Button>
+        <Link to="/menu" className={styles.tomenu}>Faça mais compras</Link>
       </span>
     </div>
   );

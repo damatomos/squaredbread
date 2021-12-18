@@ -21,8 +21,14 @@ export const CartStorage = ({children}) => {
   }
 
   async function clearAll() {
-    local = { products: [], length: 0 };
-    await save(local);
+    try {
+      let local = { products: [], length: 0 };
+      await save(local);
+      return true;
+    } catch(err) {
+      console.log(err);
+      return false;
+    }
   }
 
   function addProduct(product, count) {
@@ -70,14 +76,19 @@ export const CartStorage = ({children}) => {
 
   async function getTotal() {
     let { products } = await getCart();
+
+    if (!products) return 0;
+
     if (products.length > 1) {
       let vTotal = 0;
       products.forEach(({product, count}) => {
         vTotal += (product.price * count);
       });
       return vTotal;
-    } else {
+    } else if (products.length === 1) {
       return products[0].product.price * products[0].count;
+    } else {
+      return 0;
     }
   }
 
@@ -97,6 +108,7 @@ export const CartStorage = ({children}) => {
 
   async function getCount() {
     let { products } = await getCart();
+    if (!products) return 0;
     return getCountProducts(products);
   }
 

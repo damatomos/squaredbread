@@ -41,8 +41,22 @@
 .btnContainer {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+}
+
+.tomenu {
+  font-size: 14px;
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  color: #5555ff;
+  text-decoration: underline;
+}
+
+.tomenu:hover {
+  color: #aaaaff;
 }
 
 @media screen and (max-width: 840px) {
