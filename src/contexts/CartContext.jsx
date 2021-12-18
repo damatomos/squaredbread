@@ -71,9 +71,11 @@ export const CartStorage = ({children}) => {
   async function getTotal() {
     let { products } = await getCart();
     if (products.length > 1) {
-      return products.reduce((prev, current) => {
-        return (prev.product.price * prev.count) + (current.product.price * current.count)
+      let vTotal = 0;
+      products.forEach(({product, count}) => {
+        vTotal += (product.price * count);
       });
+      return vTotal;
     } else {
       return products[0].product.price * products[0].count;
     }
@@ -81,9 +83,11 @@ export const CartStorage = ({children}) => {
 
   function getCountProducts(products) {
     if (products.length > 1) {
-      return products.reduce((prev, current) => {
-        return prev.count + current.count;
+      let vCount = 0;
+      products.forEach(({count}) => {
+        vCount += count;
       });
+      return vCount;
     } else if (products.length == 1 ) {
       return products[0].count;
     } else {
