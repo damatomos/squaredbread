@@ -5,12 +5,14 @@ import styles from './Search.module.css';
 // images
 import SearchSVG from './../../assets/search.svg?component';
 
-function Search() {
+function Search({ setSearch }) {
 
   const [value, setValue] = React.useState('');
 
   function handleClick() {
-    // implement search here
+    if (setSearch) {
+      setSearch(value || ' ');
+    }
   }
 
   function handleChange({target}) {

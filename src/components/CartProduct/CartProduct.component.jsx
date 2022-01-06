@@ -48,7 +48,10 @@ function CartProduct({item, ...props}) {
       </span>
       <span className={styles.values}>
         <Counter addClass={styles.counter} setCounter={setCounter}>{counter}</Counter>
-        <p className={styles.price}>{formatter.format(product.price * counter, { currency: 'pt-br', code: 'BRL'})}</p>
+        <span className={styles.prices}>
+          <p className={styles.price}>{formatter.format(product.price * counter, { currency: 'pt-br', code: 'BRL'})}</p>
+          <p className={styles.price_unit}>unid. {formatter.format(product.price, { currency: 'pt-br', code: 'BRL'})}</p>
+        </span>
       </span>
       <span className={styles.delete} onClick={handleDelete}>
         <DeleteSVG/>

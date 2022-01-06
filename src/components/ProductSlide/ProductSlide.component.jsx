@@ -37,7 +37,7 @@ function ProductSlide({name, products, setViewModal}) {
 
   React.useEffect(() => {
     console.log(products);
-    if ( products.length < 4) {
+    if ( products && products.length < 4) {
       setActiveArrow(false);
     } else {
       setActiveArrow(true);
@@ -56,7 +56,7 @@ function ProductSlide({name, products, setViewModal}) {
           }
         </div>
         {
-          activeArrow && 
+          activeArrow && products &&
           (
             <>
               <span onClick={leftArrow} className={`${styles.arrowButton} ${styles.leftButton}`}> <LeftArrowSVG/> </span>
@@ -65,6 +65,12 @@ function ProductSlide({name, products, setViewModal}) {
           )
         }
       </div>
+      
+      {
+        !products && (
+          <div className={styles.noproducts}>Nenhum produto encontrado.</div>
+        ) 
+      }
     </section>
   );
 }

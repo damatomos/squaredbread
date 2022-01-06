@@ -15,14 +15,9 @@ function Menu() {
 
   const [categories, setCategories] = React.useState([]);
   const [products, setProducts] = React.useState([]);
+  const [search, setSearch] = React.useState(null);
 
   const [viewModal, setViewModal] = React.useState(null);
-
-  // 
-
-  async function getProducts(category) {
-    return await axios(`http://localhost:4040/products?category=${category}`);
-  }
 
   React.useEffect(async () => {
     let responseCategories = await axios('http://localhost:4040/categories');
@@ -34,14 +29,26 @@ function Menu() {
 
   }, []);
 
+  React.useEffect(async () => {
+    if (search) {
+      let responseProducts = await axios(`http://localhost:4040/products?search=${search}`);
+      setProducts(responseProducts.data);
+    } else if (products.length == 0) {
+      let responseProducts = await axios('http://localhost:4040/products');
+      setProducts(responseProducts.data);
+    }
+  }, [search]);
+
   return (
     <section className={`page ${styles.wrapper}`}>
       <div className={`container ${styles.content}`}>
-        <Search/>
+        <Search setSearch={setSearch}/>
         {
           categories.map((category) => {
             let categoryProducts = products.filter((product) => product.category.id == category.id);
-            return (<ProductSlide key={category.id} setViewModal={setViewModal} name={category.name} products={categoryProducts}/>);
+            if (categoryProducts.length > 0) {
+              return (<ProductSlide key={category.id} setViewModal={setViewModal} name={category.name} products={categoryProducts}/>);
+            }
           })
         }
       </div>
