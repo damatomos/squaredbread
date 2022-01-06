@@ -7,6 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "currency-formatter": "^1.5.9",
     "history": "^5.1.0",
     "react": "^17.0.2",

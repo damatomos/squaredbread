@@ -36,12 +36,13 @@ function ProductSlide({name, products, setViewModal}) {
   }
 
   React.useEffect(() => {
+    console.log(products);
     if ( products.length < 4) {
       setActiveArrow(false);
     } else {
       setActiveArrow(true);
     }
-  }, [slideRef]);
+  }, [products]);
 
   return (
     <section className={styles.wrapper}>

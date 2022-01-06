@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import styles from './Menu.module.css';
 
@@ -12,27 +13,37 @@ import ProductModal from '../../components/ProductSlide/ProductModal/ProductModa
 
 function Menu() {
 
-  const menuContents = contents.menu;
-  const bolos = { name: 'Bolos', products: []};
-  const lanches = { name: 'Lanches', products: []};
-  const paes = { name: 'Pães', products: []};
-  const bebidas = { name: 'Bebidas', products: []};
-    
-  bolos.products = menuContents.products.filter(product => product.category == 'Bolos' );
-  lanches.products = menuContents.products.filter(product => product.category == 'Lanches' );
-  paes.products = menuContents.products.filter(product => product.category == 'Pães' );
-  bebidas.products = menuContents.products.filter(product => product.category == 'Bebidas' );
+  const [categories, setCategories] = React.useState([]);
+  const [products, setProducts] = React.useState([]);
 
   const [viewModal, setViewModal] = React.useState(null);
+
+  // 
+
+  async function getProducts(category) {
+    return await axios(`http://localhost:4040/products?category=${category}`);
+  }
+
+  React.useEffect(async () => {
+    let responseCategories = await axios('http://localhost:4040/categories');
+    setCategories(responseCategories.data);
+    console.log(responseCategories);
+
+    let responseProducts = await axios('http://localhost:4040/products');
+    setProducts(responseProducts.data);
+
+  }, []);
 
   return (
     <section className={`page ${styles.wrapper}`}>
       <div className={`container ${styles.content}`}>
         <Search/>
-        <ProductSlide setViewModal={setViewModal} name={bolos.name} products={bolos.products}/>
-        <ProductSlide setViewModal={setViewModal} name={lanches.name} products={lanches.products}/>
-        <ProductSlide setViewModal={setViewModal} name={paes.name} products={paes.products}/>
-        <ProductSlide setViewModal={setViewModal} name={bebidas.name} products={bebidas.products}/>
+        {
+          categories.map((category) => {
+            let categoryProducts = products.filter((product) => product.category.id == category.id);
+            return (<ProductSlide key={category.id} setViewModal={setViewModal} name={category.name} products={categoryProducts}/>);
+          })
+        }
       </div>
       {
         viewModal && <ProductModal setViewModal={setViewModal}  productId={viewModal}/>

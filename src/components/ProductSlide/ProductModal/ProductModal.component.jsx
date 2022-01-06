@@ -13,10 +13,11 @@ import Counter from './../../Counter/Counter.component';
 
 // Contexts
 import { CartContext } from '../../../contexts/CartContext';
+import axios from 'axios';
 
 function ProductModal({productId, setViewModal}) {
 
-  const [product, setProduct] = React.useState({image_url: '', name: '' });
+  const [product, setProduct] = React.useState({});
   const [countProduct, setCountProduct] = React.useState(1);
 
   const navigate = useNavigate();
@@ -38,10 +39,11 @@ function ProductModal({productId, setViewModal}) {
     }
   }
 
-  React.useEffect(() => {
-    const product = contents.menu.products.find( (product) => product.id == productId);
-    setProduct(product);
-  }, [product]);
+  React.useEffect(async () => {
+    const product = await axios(`http://localhost:4040/products/${productId}`); 
+    console.log(product);
+    setProduct(product.data);
+  }, []);
 
   return (
     <div className={styles.wrapper} onClick={handleOutsideClick}>

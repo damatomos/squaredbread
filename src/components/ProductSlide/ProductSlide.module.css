@@ -102,7 +102,7 @@
 /* Scroll Config */
 ::-webkit-scrollbar {
   width: 10px;
-  height: 5px;
+  height: 6px;
 }
 
 /* Track */
@@ -112,7 +112,7 @@
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--yellow-transparent);
+  background: var(--yellow);
 }
 
 /* Handle on hover */
