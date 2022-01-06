@@ -18,21 +18,16 @@ function Contact() {
   const [subject, setSubject] = React.useState('');
   const [message, setMessage] = React.useState('');
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log({name, email, subject, message});
-  }
-
   return (
     <section className={`page ${styles.wrapper}`}>
       <div className={styles.content}>
         <Title>Contato</Title>
         <EmailSVG/>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <Input type="text" id="name" value={name} setValue={setName}>Seu nome</Input>
-          <Input type="email" id="email" value={email} setValue={setEmail}>Seu e-mail</Input>
-          <Input type="text" id="subject" value={subject} setValue={setSubject}>Assunto</Input>
-          <TextArea id="message" value={message} setValue={setMessage}>Sua mensagem</TextArea>
+        <form className={styles.form} action="https://formspree.io/f/mpzbwbzb" method="POST">
+          <Input type="text" id="name" name="name" value={name} setValue={setName}>Seu nome</Input>
+          <Input type="email" id="email" name="email" value={email} setValue={setEmail}>Seu e-mail</Input>
+          <Input type="text" id="subject" name="subject" value={subject} setValue={setSubject}>Assunto</Input>
+          <TextArea id="message" name="message" value={message} setValue={setMessage}>Sua mensagem</TextArea>
           <Button type="submit">Enviar</Button>
         </form>
       </div>
