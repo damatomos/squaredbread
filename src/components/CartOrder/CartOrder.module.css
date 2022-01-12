@@ -60,6 +60,22 @@
   color: #aaaaff;
 }
 
+.error {
+  font-size: 1rem;
+  color: #ff8282;
+  text-align: center;
+  animation: error 0.5s forwards;
+}
+
+@keyframes error {
+  from {
+    font-size: 0.5rem;
+  }
+  to {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (max-width: 840px) {
   .btn {
     width: 100%;

@@ -16,23 +16,26 @@ import Login from './pages/Login/Login.page';
 import { CartStorage } from './contexts/CartContext';
 import Register from './pages/Register/Register.page';
 import Cart from './pages/Cart/Cart.page';
+import { UserStorage } from './contexts/UserContext';
 
 function App() {
   return (
     <BrowserRouter>
-      <CartStorage>
-        <Header/>
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/about-us" element={<About/>}/>
-          <Route path="/menu" element={<Menu/>}/>
-          <Route path="/contact" element={<Contact/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/register" element={<Register/>}/>
-          <Route path="/cart" element={<Cart/>}/>
-        </Routes>
-        <Footer/>
-      </CartStorage>
+      <UserStorage>
+        <CartStorage>
+          <Header/>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/about-us" element={<About/>}/>
+            <Route path="/menu" element={<Menu/>}/>
+            <Route path="/contact" element={<Contact/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/register" element={<Register/>}/>
+            <Route path="/cart" element={<Cart/>}/>
+          </Routes>
+          <Footer/>
+        </CartStorage>
+      </UserStorage>
     </BrowserRouter>
   )
 }

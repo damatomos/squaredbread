@@ -63,3 +63,17 @@
   justify-content: center;
   gap: 1.25rem;
 }
+
+.btnLogout {
+  width: auto;
+  height: 44px;
+  font-size: 1.2rem;
+  background: #ff8282;
+  color: #f2f2f2;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.btnLogout:hover {
+  background: #ff5454;
+}

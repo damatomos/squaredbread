@@ -3,9 +3,11 @@ import React from 'react';
 import styles from './CartOrder.module.css';
 
 import formatter from 'currency-formatter';
+import { useNavigate } from 'react-router-dom';
 
 // Contexts
 import { CartContext } from '../../contexts/CartContext';
+import { UserContext } from '../../contexts/UserContext';
 
 import Button from './../Form/Button/Button.component';
 import { Link } from 'react-router-dom';
@@ -13,9 +15,13 @@ import { Link } from 'react-router-dom';
 function CartOrder({setSuccess}) {
   
   const cartContext = React.useContext(CartContext);
+  const { logged, user } = React.useContext(UserContext);
+
+  const navigate = useNavigate();
 
   const [total, setTotal] = React.useState(0);
   const [count, setCount] = React.useState(0);
+  const [error, setError] = React.useState(null);
 
   async function updateOrder() {
     let cart = await cartContext.getCart();
@@ -25,14 +31,20 @@ function CartOrder({setSuccess}) {
   }
 
   async function handleConfirm() {
-    if (count > 0 && total > 0) {
-      try {
-        let clean = await cartContext.clearAll();
-        if (clean) await updateOrder();
-        setSuccess("Que ótimo! Seu pedido saiu para entrega!");
-      } catch (err) {
-        console.log(err);
+    if ( logged ) {
+      if (count > 0 && total > 0) {
+        try {
+          let clean = await cartContext.clearAll();
+          if (clean) await updateOrder();
+          setSuccess("Que ótimo! Seu pedido saiu para entrega!");
+        } catch (err) {
+          console.log(err);
+        }
+      } else {
+        setError('Adicione algum item no carrinho.');
       }
+    } else {
+      navigate('/login');
     }
   }
 
@@ -50,6 +62,9 @@ function CartOrder({setSuccess}) {
         <Button addClass={styles.btn} onClick={handleConfirm}>Confirmar Pedido</Button>
         <Link to="/menu" className={styles.tomenu}>Faça mais compras</Link>
       </span>
+      {
+        error && <span className={styles.error}>{error}</span>
+      }
     </div>
   );
 }
