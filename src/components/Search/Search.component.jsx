@@ -15,6 +15,12 @@ function Search({ setSearch }) {
     }
   }
 
+  function handleKeyDown(e) {
+    if (e.key === 'Enter') {
+      handleClick();
+    }
+  }
+
   function handleChange({target}) {
     setValue(target.value);
   }
@@ -24,7 +30,7 @@ function Search({ setSearch }) {
       <label className={styles.icon} onClick={handleClick}>
         <SearchSVG/>
       </label>
-      <input value={value} onChange={handleChange} type="text" id="search" name="search" placeholder="Buscar" />
+      <input value={value} onChange={handleChange} onKeyDown={handleKeyDown} type="text" id="search" name="search" placeholder="Buscar" />
     </div>
   );
 }

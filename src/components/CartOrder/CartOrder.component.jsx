@@ -36,7 +36,7 @@ function CartOrder({setSuccess}) {
         try {
           let clean = await cartContext.clearAll();
           if (clean) await updateOrder();
-          setSuccess("Que ótimo! Seu pedido saiu para entrega!");
+          setSuccess(`${user.name.split(' ')[0]} Seu pedido saiu para entrega!`);
         } catch (err) {
           console.log(err);
         }

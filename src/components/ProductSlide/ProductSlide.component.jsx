@@ -36,7 +36,6 @@ function ProductSlide({name, products, setViewModal}) {
   }
 
   React.useEffect(() => {
-    console.log(products);
     if ( products && products.length < 4) {
       setActiveArrow(false);
     } else {

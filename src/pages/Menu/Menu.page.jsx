@@ -22,7 +22,6 @@ function Menu() {
   React.useEffect(async () => {
     let responseCategories = await axios('http://localhost:4040/categories');
     setCategories(responseCategories.data);
-    console.log(responseCategories);
 
     let responseProducts = await axios('http://localhost:4040/products');
     setProducts(responseProducts.data);

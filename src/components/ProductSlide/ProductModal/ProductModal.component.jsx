@@ -40,8 +40,7 @@ function ProductModal({productId, setViewModal}) {
   }
 
   React.useEffect(async () => {
-    const product = await axios(`http://localhost:4040/products/${productId}`); 
-    console.log(product);
+    const product = await axios(`http://localhost:4040/products/${productId}`);
     setProduct(product.data);
   }, []);
 
