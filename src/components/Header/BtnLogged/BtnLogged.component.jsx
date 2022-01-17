@@ -10,18 +10,32 @@ function BtnLogged() {
 
   const { getUser, logout } = React.useContext(UserContext);
 
+  const infoRef = React.useRef();
+  const btnRef = React.useRef();
+
   const [user, setUser] = React.useState(null);
   const [open, setOpen] = React.useState(false);
 
   function handleClick() {
-    setOpen((open) => !open);
+    setOpen(!open);
   }
 
   function handleLogout() {
-    console.log('logout');
-    const result = logout();
-    console.log(result);
+    logout();
   }
+
+  window.addEventListener('click', (e) => {
+    if ( 
+      open && e.target != infoRef.current && 
+      e.target != btnRef.current
+      ) {
+      setOpen(false);
+    }
+  }); 
+
+  window.addEventListener('scroll', () => {
+    setOpen(false);
+  });
 
   React.useEffect(() => {
     if (!user && getUser()) setUser(getUser());
@@ -29,11 +43,11 @@ function BtnLogged() {
 
   return (
     <span className={styles.wrapper}>
-      <span className={styles.btn} onClick={handleClick}>
+      <span ref={btnRef} className={styles.btn} onClick={handleClick}>
         <UserSVG/> 
       </span>
       {
-        open && <div className={styles.info} >
+        open && <div ref={infoRef} className={styles.info} >
           <span className={styles.infoName}>
             {user && user.name}
           </span>

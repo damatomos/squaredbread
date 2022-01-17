@@ -49,6 +49,7 @@
   opacity: 0.5;
 }
 
+
 .input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px var(--yellow-light) inset, 0 0 0 2px var(--yellow-dark);
 }
@@ -56,4 +57,10 @@
 .input:focus, .input:hover {
   background: var(--yellow-light);
   box-shadow: 0 0 0 4px var(--yellow);
+}
+
+.message {
+  margin-top: 1rem;
+  color: #b63232;
+  font-size: 1rem;
 }

@@ -20,6 +20,7 @@
 }
 .btn svg {
   transition: 0.3s;
+  pointer-events: none;
 }
 .btn:hover, .btn:focus {
   background: var(--word);
@@ -36,7 +37,7 @@
   top: 55px;
   right: 0;
 
-  width: 200px;
+  min-width: 200px;
   min-height: 100px;
 
   background: #f2f2f2;

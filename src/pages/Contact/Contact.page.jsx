@@ -18,6 +18,10 @@ function Contact() {
   const [subject, setSubject] = React.useState('');
   const [message, setMessage] = React.useState('');
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section className={`page ${styles.wrapper}`}>
       <div className={styles.content}>

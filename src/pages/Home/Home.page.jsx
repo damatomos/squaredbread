@@ -15,6 +15,7 @@ function Home() {
   React.useEffect(async () => {
     let responseProducts = await axios('http://localhost:4040/products?limit=4');
     setProducts(responseProducts.data);
+    window.scrollTo(0, 0);
   }, []);
   
   return (

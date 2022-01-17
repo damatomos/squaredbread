@@ -35,6 +35,10 @@ function Register() {
     }
   }
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section className={`page ${styles.wrapper}`}>
       <div className={`container ${styles.content}`}>

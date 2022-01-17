@@ -27,6 +27,8 @@ function Menu() {
     let responseProducts = await axios('http://localhost:4040/products');
     setProducts(responseProducts.data);
 
+    window.scrollTo(0, 0);
+
   }, []);
 
   React.useEffect(async () => {

@@ -10,6 +10,11 @@ import contents from './../../assets/contents.json';
 import Title from "../../components/Title/Title.component";
 
 function About() {
+
+  React.useEffect( () => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section className={`page ${styles.wrapper}`}>
       <div className={`container ${styles.content}`}>
