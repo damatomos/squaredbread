@@ -29,6 +29,8 @@ function Newsletter() {
         } else {
           setMessage('É possível que esse email já esteja cadastrado!');
         }
+      } else {
+          setMessage('Preencha o formulário!');
       }
     } catch(err) {
       setMessage('É possível que esse email já esteja cadastrado!');
