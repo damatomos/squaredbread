@@ -39,6 +39,16 @@ function Register() {
     window.scrollTo(0, 0);
   }, []);
 
+  React.useEffect(async () => {
+    try {
+      if (await userContext.logged) {
+        navigate('/');
+      }
+    } catch (err) {
+      console.log('Error to check logged');
+    }
+  });
+
   return (
     <section className={`page ${styles.wrapper}`}>
       <div className={`container ${styles.content}`}>

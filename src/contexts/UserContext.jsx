@@ -43,6 +43,7 @@ export const UserStorage = ({children}) => {
         email,
         password
       });
+      console.log(result);
 
       if (result) {
         if (result.data) {
