@@ -68,3 +68,9 @@
 .tologin span:hover {
   color: #aaaaff;
 }
+
+.message {
+  width: 100%;
+  color: #b63232;
+  text-align: center;
+}

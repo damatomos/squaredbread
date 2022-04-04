@@ -22,16 +22,34 @@ function Register() {
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
 
+  const [message, setMessage] = React.useState('');
+
   function handleLogin() {
     navigate('/login');
   }
 
   async function handleSubmit(event) {
     event.preventDefault();
-    // verify login and redirect to home
-    const result = await userContext.register(firstName, lastName, email, password, confirmPassword);
-    if (result) {
-      navigate('/');
+
+    if (firstName && lastName && email && password && confirmPassword) {
+      if (password != confirmPassword) {
+        setMessage('As senhas informadas se diferem entre si.');
+        return;
+      }
+    } else {
+      setMessage('Dados inválidos.');
+      return;
+    }
+
+    try {
+      const result = await userContext.register(firstName, lastName, email, password, confirmPassword);
+      if (result) {
+        navigate('/');
+      }
+    } catch (err) {
+      if (err.response.data.status === 403) {
+        setMessage('Usuário já cadastrado!');
+      }
     }
   }
 
@@ -59,6 +77,9 @@ function Register() {
           <Input type="email" addClass={styles.input} value={email} setValue={setEmail}>E-mail</Input>
           <Input type="password" addClass={styles.input} value={password} setValue={setPassword}>Senha</Input>
           <Input type="password" addClass={styles.input} value={confirmPassword} setValue={setConfirmPassword}>Confirmar Senha</Input>
+          {
+            message && <h5 className={styles.message}>{message}</h5>
+          }
           <Button type="submit" addClass={styles.btn} >Criar conta</Button>
           <p className={styles.tologin}>
             Já tem uma conta? <span onClick={handleLogin}>Faça seu LogIn</span>

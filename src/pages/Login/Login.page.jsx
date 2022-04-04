@@ -15,6 +15,8 @@ function Login() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
+  const [message, setMessage] = React.useState('');
+
   const userContext = React.useContext(UserContext);
 
   const navigate = useNavigate();
@@ -25,10 +27,14 @@ function Login() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    if (userContext) {
-      const result = await userContext.login(email, password);
-      console.log(result);
-      if (result) navigate('/');
+    try {
+      if (userContext) {
+        const result = await userContext.login(email, password);
+        if (result) navigate('/');
+      }
+    } catch (err) {
+      console.log(err);
+      setMessage('Email ou Senha inválidos');
     }
   }
 
@@ -53,6 +59,9 @@ function Login() {
         <form className={styles.form} onSubmit={handleSubmit}>
           <Input type="email" addClass={styles.input} value={email} setValue={setEmail} >E-mail</Input>
           <Input type="password" addClass={styles.input} value={password} setValue={setPassword} >Senha</Input>
+          {
+            message && <h5 className={styles.message}>{message}</h5>
+          }
           <Button type="submit" addClass={styles.btn} >Entrar</Button>
           <p className={styles.toregister}>
             Novo aqui? <span onClick={handleRegister}>Registre-se</span>
