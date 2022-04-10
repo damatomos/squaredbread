@@ -11,6 +11,7 @@ import About from './pages/About/About.page';
 import Menu from './pages/Menu/Menu.page';
 import Contact from './pages/Contact/Contact.page';
 import Login from './pages/Login/Login.page';
+import Admin from './pages/Admin/Admin.page';
 
 // Contexts
 import { CartStorage } from './contexts/CartContext';
@@ -32,6 +33,7 @@ function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/cart" element={<Cart/>}/>
+            <Route path="/admin" element={<Admin/>}/>
           </Routes>
           <Footer/>
         </CartStorage>

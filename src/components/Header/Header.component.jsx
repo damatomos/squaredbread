@@ -7,12 +7,22 @@ import MenuMobile from "./MenuMobile/MenuMobile.component";
 
 function Header() {
   const mobile = useMedia('(max-width: 840px)');
+
+  const [exists, setExists] = React.useState(true);
+
+  React.useEffect(() => {
+    if (window.location.href.split('/').pop()) {
+      setExists(false);
+    }
+  }, []);
   
-  return (
+  if ( exists ) return (
     <header className={styles.wrapper} >
       { mobile ? <MenuMobile/> : <Menu/> }
     </header>
   );
+
+  return <></>;
 }
 
 export default Header;
