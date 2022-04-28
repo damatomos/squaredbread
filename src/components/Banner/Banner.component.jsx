@@ -3,8 +3,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './Banner.module.css';
-import "../../../node_modules/video-react/dist/video-react.css";
-import video from '../../assets/video.mp4';
 
 import { Player, BigPlayButton } from 'video-react';
 
