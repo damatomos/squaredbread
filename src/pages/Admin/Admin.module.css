@@ -26,10 +26,6 @@
   margin-top: -8rem;
 }
 
-.cards div:last-child, div:last-child > h3, div:last-child > p {
-  background: #3DD705;
-  color: white;
-}
 
 @media (max-width: 800px) {
  .cards {
