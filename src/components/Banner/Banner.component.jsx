@@ -24,18 +24,6 @@ function Banner() {
           <p className={styles.info}>Aberto de 7:00 às 22:00</p>
           <button onClick={handleClick}  className={styles.btn}>Cardápio</button>
         </div>
-
-        <div className={styles.videocontainer}>
-          <h1>Receita do Dia</h1>
-          <Player
-            width={500}
-            height={500}
-            playsInline
-            src={video}
-          >
-            <BigPlayButton position="center" />
-          </Player>
-        </div>
       </div>
     </section>
   );
