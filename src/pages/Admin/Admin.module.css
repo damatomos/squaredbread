@@ -1,34 +1,6 @@
-.wrapper {
-  min-height: 90vh;
-  background: #f0f2f5;
-}
-
-.header {
-  background: var(--yellow-light);
-  padding: 2rem 0 10rem;
-}
-
-.title {
-  text-align: center;
-  color: white;
-
-  font-size: 2rem;
-}
-
-.cards {
-  position: relative;
-  width: 100%;
+.container {
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  gap: 2rem;
-  margin-top: -8rem;
+  flex-direction: column;
 }
 
-
-@media (max-width: 800px) {
- .cards {
-   flex-direction: column;
- } 
-}

@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 import styles from './Banner.module.css';
 
-import { Player, BigPlayButton } from 'video-react';
-
 function Banner() {
 
   const navigate = useNavigate();

@@ -11,12 +11,12 @@ function Header() {
   const [exists, setExists] = React.useState(true);
 
   React.useEffect(() => {
-    if (window.location.href.split('/').pop()) {
+    if (window.location.href.split('/').pop() === 'admin') {
       setExists(false);
     }
   }, []);
-  
-  if ( exists ) return (
+
+  if (exists) return (
     <header className={styles.wrapper} >
       { mobile ? <MenuMobile/> : <Menu/> }
     </header>

@@ -1,0 +1,112 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background: var(--yellow-light);
+  height: 100%;
+  min-width: 240px;
+  width: 20%;
+  flex: 1;
+  padding: 0.8rem;
+  position: relative;
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.2rem;
+}
+
+.divider {
+  border: 1px solid black;
+  opacity: 0.1;
+}
+
+.addCategoria {
+  margin-top: 1rem;
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.addCategoria input {
+  min-width: 172px;
+  padding: 0 0.5rem;
+}
+
+.addCategoria button {
+  min-width: 30px;
+  min-height: 30px;
+  cursor: pointer;
+  background: white;
+}
+
+.addCategoria button:hover {
+  background-color: rgb(212, 212, 212);
+}
+
+.categories {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 1.2rem;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.category {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  font-size: 1rem;
+  font-family: var(--font-secondary);
+  padding: 0.5rem 0.6rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.category button {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  color: black;
+  cursor: pointer;
+}
+
+.category button:hover {
+  color: var(--yellow-light);
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+
+/* Scroll Config */
+.categories::-webkit-scrollbar {
+  width: 2px;
+  height: 6px;
+}
+
+/* Track */
+.categories::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+ 
+/* Handle */
+.categories::-webkit-scrollbar-thumb {
+  background: var(--yellow);
+}
+
+/* Handle on hover */
+.categories::-webkit-scrollbar-thumb:hover {
+  background: var(--yellow-light); 
+}
