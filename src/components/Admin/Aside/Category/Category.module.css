@@ -1,0 +1,29 @@
+
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  font-size: 1rem;
+  font-family: var(--font-secondary);
+  padding: 0.5rem 0.6rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.button {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover svg {
+  fill: var(--yellow-light);
+}

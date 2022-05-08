@@ -1,0 +1,96 @@
+.wrapper {
+  max-height: 100%;
+  width: 100%;
+  padding: 1.2rem;
+}
+
+.title {
+  text-align: center;
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  font-size: 2rem;
+
+  padding: 4rem 1rem;
+}
+
+.contentData {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  align-self: flex-end;
+  font-size: 1rem;
+  padding: 0.3rem 0.8rem;
+  font-weight: 500;
+  background: white;
+  cursor: pointer;
+  border: 1px solid var(--word);
+  margin-bottom: 1rem;
+}
+
+.contentTable {
+  position: relative;
+  background: var(--yellow-light);
+  width: 100%;
+  min-width: 450px;
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+}
+
+.table {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.tableBody {
+  width: 100%;
+  overflow-y: scroll;
+  margin-top: 2.5rem;
+}
+
+.tableHeader {
+  position: absolute;
+  padding: 0 1.6rem;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.table thead th {
+  padding: 0.5rem 0;
+  background: white;
+}
+
+.table tbody tr {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Scroll Config */
+.tableBody::-webkit-scrollbar {
+  width: 2px;
+  height: 6px;
+}
+
+/* Track */
+.tableBody::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+ 
+/* Handle */
+.tableBody::-webkit-scrollbar-thumb {
+  background: var(--yellow);
+}
+
+/* Handle on hover */
+.tableBody::-webkit-scrollbar-thumb:hover {
+  background: var(--yellow-light); 
+}
