@@ -20,6 +20,7 @@ function Home() {
   
   return (
     <div className={`page ${styles.wrapper}`}>
+      <div className={styles.admin} onClick={() => window.location.href="/admin"}></div>
       <Banner/>
       <div className={`container ${styles.content}`}>
         <ProductSlide setViewModal={setViewModal} name="Destaques do dia" products={products}/>

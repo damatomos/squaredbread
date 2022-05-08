@@ -31,6 +31,11 @@
   margin-bottom: 1rem;
 }
 
+.button:hover {
+  color: var(--yellow);
+  border-color: var(--yellow);
+}
+
 .contentTable {
   position: relative;
   background: var(--yellow-light);

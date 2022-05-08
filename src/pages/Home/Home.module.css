@@ -1,2 +1,12 @@
 .wrapper {
+  position: relative;
+}
+
+.admin {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 0;
+  cursor: pointer;
 }

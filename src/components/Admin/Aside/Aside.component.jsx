@@ -8,16 +8,33 @@ import LogoSVG from '../../../assets/logo.svg?component';
 
 // Components
 import Category from "./Category/Category.component";
+import axios from "axios";
 
 export default function Aside() {
 
   const [listCategories, setListCategories] = React.useState([]);
   const [category, setCategory] = React.useState('');
+  const [refesh, setRefresh] = React.useState(false);
 
-  function handleAddCategory() {
-    setListCategories( (categories) => [...categories, { name: category }]);
+  async function handleAddCategory() {
+    try {
+      await axios.post('http://localhost:4040/stock-category', {
+        name: category,
+      });
+
+      const categories = await axios.get('http://localhost:4040/stock-category');
+      setListCategories(categories.data);
+      
+    } catch (err) {
+      console.log(err);
+    }
     setCategory('');
   }
+
+  React.useEffect( async () => {
+    const categories = await axios.get('http://localhost:4040/stock-category');
+    setListCategories(categories.data);
+  }, [refesh]);
 
   return (
     <div className={styles.wrapper}>
@@ -36,8 +53,8 @@ export default function Aside() {
 
       <div className={styles.categories}>
         {
-          listCategories.map(({name}) => {
-            return <Category key={name} name={name}/>
+          listCategories.map(({id, name}) => {
+            return <Category setRefresh={setRefresh} key={name} id={id} name={name}/>
           })
         }
       </div>

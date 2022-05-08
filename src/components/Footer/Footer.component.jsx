@@ -12,7 +12,7 @@ function Footer() {
   const [exists, setExists] = React.useState(true);
 
   React.useEffect(() => {
-    if (window.location.href.split('/').pop() === 'admin') {
+    if (window.location.href.split('/').pop().startsWith('admin')) {
       setExists(false);
     }
   }, []);

@@ -1,5 +1,12 @@
 .wrapper {
   background: white;
+  max-height: 40px;
+  overflow-x: scroll;
+}
+
+.wrapper td {
+  overflow-x: scroll;
+  white-space: nowrap;
 }
 
 .button {
