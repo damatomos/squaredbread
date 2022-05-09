@@ -2,6 +2,8 @@ import React from "react";
 import Banner from "../../components/Banner/Banner.component";
 import styles from './Home.module.css';
 
+import { useNavigate } from "react-router-dom";
+
 import contents from '../../assets/contents.json';
 import ProductSlide from "../../components/ProductSlide/ProductSlide.component";
 import ProductModal from "../../components/ProductSlide/ProductModal/ProductModal.component";
@@ -12,6 +14,8 @@ function Home() {
   const [viewModal, setViewModal] = React.useState(null);
   const [products, setProducts] = React.useState([]);
 
+  const navigate = useNavigate();
+
   React.useEffect(async () => {
     let responseProducts = await axios('http://localhost:4040/products?limit=4');
     setProducts(responseProducts.data);
@@ -20,7 +24,7 @@ function Home() {
   
   return (
     <div className={`page ${styles.wrapper}`}>
-      <div className={styles.admin} onClick={() => window.location.href="/admin"}></div>
+      <div className={styles.admin} onClick={() => navigate("/admin")}></div>
       <Banner/>
       <div className={`container ${styles.content}`}>
         <ProductSlide setViewModal={setViewModal} name="Destaques do dia" products={products}/>
