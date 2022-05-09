@@ -5,7 +5,7 @@ import useMedia from "../../hooks/useMedia";
 import Menu from "./Menu/Menu.component";
 import MenuMobile from "./MenuMobile/MenuMobile.component";
 
-function Header() {
+function Header({refresh}) {
   const mobile = useMedia('(max-width: 840px)');
 
   const [exists, setExists] = React.useState(true);
@@ -14,7 +14,7 @@ function Header() {
     if (window.location.href.split('/').pop().startsWith('admin')) {
       setExists(false);
     }
-  }, []);
+  }, [refresh]);
 
   if (exists) return (
     <header className={styles.wrapper} >

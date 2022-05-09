@@ -20,11 +20,14 @@ import Cart from './pages/Cart/Cart.page';
 import { UserStorage } from './contexts/UserContext';
 
 function App() {
+
+  const [refresh, setRefresh] = React.useState(true);
+
   return (
     <BrowserRouter>
       <UserStorage>
         <CartStorage>
-          <Header/>
+          <Header refresh={refresh}/>
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/about-us" element={<About/>}/>
@@ -33,7 +36,7 @@ function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/cart" element={<Cart/>}/>
-            <Route path="/admin" element={<Admin/>}/>
+            <Route path="/admin" element={<Admin setGlobalRefresh={setRefresh} />}/>
           </Routes>
           <Footer/>
         </CartStorage>

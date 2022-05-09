@@ -10,7 +10,7 @@ import styles from './Admin.module.css';
 
 // Components
 
-function Admin() {
+function Admin({setGlobalRefresh}) {
 
   const [viewModal, setViewModal] = React.useState(false);
   const [stockItems, setStockItems] = React.useState([]);
@@ -21,6 +21,10 @@ function Admin() {
     console.log(response.data);
     setStockItems(response.data);
   }, [refresh]);
+
+  React.useEffect(() => {
+    setGlobalRefresh((refresh) => !refresh);
+  }, []);
 
   return (
     <div className={styles.container}>
