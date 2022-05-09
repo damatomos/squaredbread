@@ -7,7 +7,7 @@ import FaceSVG from '../../assets/sn_facebook.svg?component';
 import InstaSVG from '../../assets/sn_instagram.svg?component';
 import TwitSVG from '../../assets/sn_twitter.svg?component';
 
-function Footer() {
+function Footer({refresh}) {
 
   const [exists, setExists] = React.useState(true);
 
@@ -15,7 +15,7 @@ function Footer() {
     if (window.location.href.split('/').pop().startsWith('admin')) {
       setExists(false);
     }
-  }, []);
+  }, [refresh]);
 
 
   if (exists) {
