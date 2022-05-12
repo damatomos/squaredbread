@@ -6,13 +6,18 @@ import RowData from "./RowData/RowData.component";
 
 export default function DataTable({setViewModal, stockItems, setRefresh}) {
 
+  function handleAdd() {
+    setViewModal(true);
+    setRefresh((refresh) => !refresh);
+  }
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
         Produtos do Estoque
       </div>
       <div className={styles.btnContent}>
-        <button type="button" className={styles.button} onClick={() => setViewModal(true)}>Adicionar</button>
+        <button type="button" className={styles.button} onClick={handleAdd}>Adicionar</button>
       </div>
       <div className={styles.contentData}>
         <div className={styles.contentTable}>

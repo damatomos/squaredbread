@@ -13,7 +13,7 @@ function Input({name, value, setValue, ...props}) {
   );
 }
 
-export default function Modal({setRefresh, viewModal, setViewModal}) {
+export default function Modal({refresh, setRefresh, viewModal, setViewModal}) {
 
   const [name, setName] = React.useState('');
   const [quantity, setQuantity] = React.useState(0);
@@ -64,7 +64,7 @@ export default function Modal({setRefresh, viewModal, setViewModal}) {
     } catch (err) {
       console.log(err);
     }
-  }, []);
+  }, [refresh]);
 
   if (!viewModal) return (<></>);
 

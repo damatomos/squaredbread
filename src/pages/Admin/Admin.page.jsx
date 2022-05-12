@@ -34,7 +34,7 @@ function Admin({setGlobalRefresh}) {
         <DataTable setRefresh={setRefresh} stockItems={stockItems} setViewModal={setViewModal} />
       </div>
       
-      <Modal setRefresh={setRefresh} setViewModal={setViewModal} viewModal={viewModal} />
+      <Modal refresh={refresh} setRefresh={setRefresh} setViewModal={setViewModal} viewModal={viewModal} />
     </div>
   );
 }
