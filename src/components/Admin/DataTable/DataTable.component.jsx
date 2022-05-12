@@ -11,8 +11,10 @@ export default function DataTable({setViewModal, stockItems, setRefresh}) {
       <div className={styles.title}>
         Produtos do Estoque
       </div>
-      <div className={styles.contentData}>
+      <div className={styles.btnContent}>
         <button type="button" className={styles.button} onClick={() => setViewModal(true)}>Adicionar</button>
+      </div>
+      <div className={styles.contentData}>
         <div className={styles.contentTable}>
           <div className={styles.tableHeader}>
             <table className={styles.table}>

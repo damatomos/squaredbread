@@ -63,6 +63,43 @@
   align-items: flex-end;
 }
 
+.buttonOpen {
+  position: absolute;
+  top: 10px;
+  right: -40px;
+  width: 32px;
+  height: 32px;
+  background: var(--yellow);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 1px black;
+  display: none;
+}
+
+.buttonOpen svg {
+  fill: white;
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    position: absolute;
+    z-index: 1000;
+    min-height: calc(100vh - 42px);
+    transition: transform 0.3s linear;
+    border-right: 2px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .buttonOpen {
+    display: flex;
+  }
+
+  .closed {
+    transform: translateX(-100%);
+  }
+}
+
 
 /* Scroll Config */
 .categories::-webkit-scrollbar {

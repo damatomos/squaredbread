@@ -2,6 +2,7 @@
   max-height: 100%;
   width: 100%;
   padding: 1.2rem;
+  flex: 1;
 }
 
 .title {
@@ -20,8 +21,15 @@
   flex-direction: column;
 }
 
+.btnContent {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .button {
-  align-self: flex-end;
   font-size: 1rem;
   padding: 0.3rem 0.8rem;
   font-weight: 500;
@@ -40,7 +48,7 @@
   position: relative;
   background: var(--yellow-light);
   width: 100%;
-  min-width: 450px;
+  min-width: 500px;
   max-height: 450px;
   display: flex;
   flex-direction: column;
@@ -77,6 +85,12 @@
 .table tbody tr {
   vertical-align: middle;
   text-align: center;
+}
+
+@media (max-width: 800px) {
+  .contentData {
+    overflow-x: scroll;
+  }
 }
 
 /* Scroll Config */

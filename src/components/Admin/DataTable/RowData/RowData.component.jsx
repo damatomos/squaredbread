@@ -15,13 +15,18 @@ export default function RowData({id, name, quantity, category, date, setRefresh}
     setRefresh((refresh) => !refresh);
   }
 
+  function convertDate(date) {
+    let dateFormatter = date.split('T')[0].split('-');
+    return dateFormatter[2] + '/' + dateFormatter[1] + '/' + dateFormatter[0];
+  }
+
   return (
     <tr className={styles.wrapper}>
       <td>{id}</td>
       <td>{name}</td>
       <td>{quantity}</td>
       <td>{category.name}</td>
-      <td>{date}</td>
+      <td>{ convertDate(date) }</td>
       <td width="40" className={styles.tdButton}>
         <button className={styles.button}>
           <EditSVG/>

@@ -1,11 +1,12 @@
 .wrapper {
- background-color: var(--yellow-dark);
- display: flex;
- align-items: center;
- justify-content: space-between;
- overflow: hidden;
+  background-color: var(--yellow-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
 
   padding: 0.5rem 3.2rem;
+  height: 42px;
 }
 
 .wrapper h2 {
