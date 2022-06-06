@@ -54,6 +54,9 @@ function BtnLogged() {
           <span className={styles.infoEmail}>
             {user && user.email}
           </span>
+          <span className={styles.infoEmail}>
+            {user && user.phoneNumber.slice(3, user.phoneNumber.length)}
+          </span>
           <button className={styles.btnLogout} onClick={handleLogout}>Sair</button>
         </div>
       }
