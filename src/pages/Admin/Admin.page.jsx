@@ -15,6 +15,7 @@ function Admin({setGlobalRefresh}) {
   const [viewModal, setViewModal] = React.useState(false);
   const [stockItems, setStockItems] = React.useState([]);
   const [refresh, setRefresh] = React.useState(false);
+  const [dataStock, setDataStock] = React.useState(null);
 
   React.useEffect(async () => {
     const response = await axios.get('http://localhost:4040/stock');
@@ -31,10 +32,10 @@ function Admin({setGlobalRefresh}) {
       <Header/>
       <div className={styles.content}>
         <Aside/>
-        <DataTable setRefresh={setRefresh} stockItems={stockItems} setViewModal={setViewModal} />
+        <DataTable setRefresh={setRefresh} stockItems={stockItems} setViewModal={setViewModal} setDataStock={setDataStock} />
       </div>
       
-      <Modal refresh={refresh} setRefresh={setRefresh} setViewModal={setViewModal} viewModal={viewModal} />
+      <Modal refresh={refresh} setRefresh={setRefresh} setViewModal={setViewModal} viewModal={viewModal} setDataStock={setDataStock} dataStock={dataStock} />
     </div>
   );
 }
