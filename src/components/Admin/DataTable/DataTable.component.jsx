@@ -4,7 +4,7 @@ import styles from './DataTable.module.css';
 import RowData from "./RowData/RowData.component";
 
 
-export default function DataTable({setViewModal, stockItems, setRefresh}) {
+export default function DataTable({setViewModal, stockItems, setRefresh, setDataStock}) {
 
   function handleAdd() {
     setViewModal(true);
@@ -30,6 +30,7 @@ export default function DataTable({setViewModal, stockItems, setRefresh}) {
                     <th>Quantidade</th>
                     <th>Categoria</th>
                     <th>Data</th>
+                    <th>Última compra</th>
                     <th width="40" style={{backgroundColor: 'transparent'}}></th>
                     <th width="40" style={{backgroundColor: 'transparent'}}></th>
                   </tr>
@@ -47,8 +48,11 @@ export default function DataTable({setViewModal, stockItems, setRefresh}) {
                     name={data.name}
                     quantity={data.qty}
                     category={data.category_stock}
-                    date={data.dt_last_buy}
+                    date_buy={data.dt_buy}
+                    date_last_buy={data.dt_last_buy}
                     setRefresh={setRefresh}
+                    setViewModal={setViewModal}
+                    setDataStock={setDataStock}
                   />)
                 }
               </tbody>

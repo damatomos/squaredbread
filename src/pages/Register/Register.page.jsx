@@ -18,6 +18,7 @@ function Register() {
 
   const [firstName, setFirstName] = React.useState('');
   const [lastName, setLastName] = React.useState('');
+  const [phoneNumber, setPhoneNumber] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
@@ -31,7 +32,7 @@ function Register() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    if (firstName && lastName && email && password && confirmPassword) {
+    if (firstName && lastName && email && password && confirmPassword && phoneNumber ) {
       if (password != confirmPassword) {
         setMessage('As senhas informadas se diferem entre si.');
         return;
@@ -42,7 +43,7 @@ function Register() {
     }
 
     try {
-      const result = await userContext.register(firstName, lastName, email, password, confirmPassword);
+      const result = await userContext.register(firstName, lastName, phoneNumber, email, password, confirmPassword);
       if (result) {
         navigate('/');
       }
@@ -74,6 +75,7 @@ function Register() {
         <form className={styles.form} onSubmit={handleSubmit}>
           <Input type="text" addClass={styles.input} value={firstName} setValue={setFirstName}>Nome</Input>
           <Input type="text" addClass={styles.input} value={lastName} setValue={setLastName}>Sobrenome</Input>
+          <Input type="text" addClass={styles.input} value={phoneNumber} setValue={setPhoneNumber}>Telefone</Input>
           <Input type="email" addClass={styles.input} value={email} setValue={setEmail}>E-mail</Input>
           <Input type="password" addClass={styles.input} value={password} setValue={setPassword}>Senha</Input>
           <Input type="password" addClass={styles.input} value={confirmPassword} setValue={setConfirmPassword}>Confirmar Senha</Input>

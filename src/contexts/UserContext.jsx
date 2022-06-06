@@ -17,12 +17,13 @@ export const UserStorage = ({children}) => {
     return user;
   }
 
-  async function register(firstName, lastName, email, password, confirmPassword) {
+  async function register(firstName, lastName, phoneNumber, email, password, confirmPassword) {
     if ( firstName && lastName && email && password && confirmPassword ) {
       if ( password === confirmPassword ) {
         const result = await axios.post('http://localhost:4040/users/register', {
           firstName,
           lastName,
+          phoneNumber,
           email,
           password
         });
