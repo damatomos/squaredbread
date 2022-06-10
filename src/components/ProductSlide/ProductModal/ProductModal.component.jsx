@@ -52,6 +52,7 @@ function ProductModal({productId, setViewModal}) {
           <h2 className={styles.title}>{product.name}</h2>
           <p className={styles.description}>{product.description}</p>
           <span className={styles.price}>{formatter.format(product.price, { code: 'BRL'})}</span>
+          <span className={styles.validity}> <strong>Validade:</strong> {product.validity} dia(s)</span>
           <div className={styles.btnContainer}>
             <Counter setCounter={setCountProduct}>{countProduct}</Counter>
             <button className={styles.btnAdd} onClick={addProduct}>Adicionar</button>
