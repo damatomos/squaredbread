@@ -103,6 +103,17 @@
   color: #82ff82;
 }
 
+.validity {
+  font-size: 1rem;
+  font-family: var(--font-tertiary);
+  color: #ff8282;
+  font-weight: bold;
+}
+
+.validity strong {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .btnContainer {
   display: flex;
   align-items: center;
