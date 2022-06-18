@@ -65,6 +65,7 @@ export default function Modal({refresh, setRefresh, viewModal, setViewModal, dat
       setCategory('DEFAULT');
       setViewModal(false);
       setRefresh((refresh) => !refresh);
+      setDataStock(null);
     } catch (err) {
       console.log(err);
     }
