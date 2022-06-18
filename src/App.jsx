@@ -18,6 +18,7 @@ import { CartStorage } from './contexts/CartContext';
 import Register from './pages/Register/Register.page';
 import Cart from './pages/Cart/Cart.page';
 import { UserStorage } from './contexts/UserContext';
+import LoginAdmin from './pages/LoginAdmin/LoginAdmin.page';
 
 function App() {
 
@@ -36,7 +37,8 @@ function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/cart" element={<Cart/>}/>
-            <Route path="/admin" element={<Admin setGlobalRefresh={setRefresh} />}/>
+            <Route path="/admin-stock" element={<Admin setGlobalRefresh={setRefresh} />}/>
+            <Route path="/admin" element={<LoginAdmin />}/>
           </Routes>
           <Footer refresh={refresh} />
         </CartStorage>

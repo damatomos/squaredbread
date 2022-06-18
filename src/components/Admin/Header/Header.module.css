@@ -17,4 +17,9 @@
 
 .wrapper a {
   color: white;
+  cursor: pointer;
+}
+
+.wrapper a:hover {
+  color: red;
 }

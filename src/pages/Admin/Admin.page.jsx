@@ -7,6 +7,7 @@ import Modal from '../../components/Admin/Modal/Modal.component';
 import axios from 'axios';
 
 import styles from './Admin.module.css';
+import { useNavigate } from 'react-router';
 
 // Components
 
@@ -17,6 +18,8 @@ function Admin({setGlobalRefresh}) {
   const [refresh, setRefresh] = React.useState(false);
   const [dataStock, setDataStock] = React.useState(null);
 
+  const navigate = useNavigate();
+
   React.useEffect(async () => {
     const response = await axios.get('http://localhost:4040/stock');
     console.log(response.data);
@@ -24,6 +27,10 @@ function Admin({setGlobalRefresh}) {
   }, [refresh]);
 
   React.useEffect(() => {
+    if (localStorage.getItem('admin') == null || localStorage.getItem('admin') != 'logged') {
+      navigate('/admin');
+    }
+
     setGlobalRefresh((refresh) => !refresh);
   }, []);
 
